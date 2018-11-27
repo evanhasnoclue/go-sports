@@ -23,7 +23,7 @@
       </view>
       <view class='row-users'>
         <view class='capacity'>
-          <view class='font-content'>{{sport.bookings.length}}{{sport.capacity}}</view>
+          <view class='font-content'>{{sport.bookings.length}}/{{sport.capacity}}</view>
         </view>
         <view class='users'>
           <block wx:for='{{sport.bookings}}' wx:key="booking.id" wx:for-item="booking">
@@ -37,13 +37,17 @@
       <view class='font-content font-grey'>{{sport.description}}</view>
     </view>
     <view class='messages card-shadow margin-bottom padding-left'>
+    <view class='font-title'>Messages</view>
+    <block wx:for='sport.messages' wx:for-item='message' wx:key='message.id' >
+    <view class='font-content font-grey'>{{message.content}}</view>
+    </block>
     </view>
 
   </view>
   <view class='actions'>
     <view class='icons'></view>
     <view class='buttons'>
-      <!-- <button class='btn btn-small background-primary font-white' bindtap='bookSports'>Join</button> -->
+      <button class='btn btn-small background-primary font-white' bindtap='bookSports'>Join</button>
     </view>
   </view>
 </view>
