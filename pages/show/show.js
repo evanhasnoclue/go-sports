@@ -13,12 +13,16 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    let page = this;
     const sport_id = parseInt(options.id);
-    const sports = app.globalData.sports;
-    sports.forEach((sport) => {
-      if (sport.id === sport_id) {
-        this.setData({
-          sport: sport
+    const api_url = app.globalData.url;
+    wx.request({
+      url: `${api_url}/sports/${sport_id}`,
+      method: 'GET',
+      success: (res) => {
+        console.log('data', res);
+        page.setData({
+          sport: res.data
         });
       }
     })

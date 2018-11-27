@@ -71,11 +71,21 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
 }
 
 .row-users {
   margin-top: 0;
   height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.users {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .row-description {
@@ -130,11 +140,13 @@
   border-radius: 50%;
   width: 50px;
   height: 50px;
+  border: 1px solid rgb(240,240,240);
 }
 
 .avatar-small {
   width: 35px;
   height: 35px;
+  margin: 0 5px;
 }
 
 .tag-border {
