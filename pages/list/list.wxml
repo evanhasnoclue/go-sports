@@ -1,11 +1,11 @@
 <!--pages/list/list.wxml-->
   <view class="list">
     <view wx:for="{{ sports }}" wx:for-item="sport" class="sport" wx:key="sport.id">
-      <image src="{{ sport.cover }}" mode="aspectFill"></image>
+      <image src="{{ sport.photo }}" mode="aspectFill"></image>
       <view class="info">
-        <view class="title">{{ sport.name }}</view>
+        <view class="title">{{ sport.title }}</view>
         <view class="rating">
-          <view class="count">{{ sport.rating_users }}人点评</view>
+          <view class="count">{{ sport.like }}人点赞</view>
         </view>
       </view>
       <view class="mask"></view>

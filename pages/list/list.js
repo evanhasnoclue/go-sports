@@ -1,33 +1,35 @@
+const app = getApp()
 Page({
 
 
   data: {
-    sports: [
-      {
-        "id":1,
-        "name":"Boxing basic",
-        "rating_users":5,
-        "cover":"/images/cover1.jpg"
-      },
-      {
-        "id": 2,
-        "name": "Tennismatch",
-        "rating_users": 7,
-        "cover":"/images/cover2.jpg"
-      },
-      {
-        "id": 3,
-        "name": "Balanceexercise",
-        "rating_users": 5,
-        "cover": "/images/cover3.jpeg"
-      },
-      {
-        "id": 4,
-        "name": "Running match",
-        "rating_users": 10,
-        "cover": "/images/cover4.png"
-      },
-    ]
+    sports: []
+    // sports: [
+    //   {
+    //     "id":1,
+    //     "title":"Boxing basic",
+    //     "rating_users":5,
+    //     "photo":"/images/cover1.jpg"
+    //   },
+    //   {
+    //     "id": 2,
+    //     "title": "Tennismatch",
+    //     "rating_users": 7,
+    //     "photo":"/images/cover2.jpg"
+    //   },
+    //   {
+    //     "id": 3,
+    //     "title": "Balanceexercise",
+    //     "rating_users": 5,
+    //     "photo": "/images/cover3.jpeg"
+    //   },
+    //   {
+    //     "id": 4,
+    //     "name": "Running match",
+    //     "rating_users": 10,
+    //     "cover": "/images/cover4.png"
+    //   },
+    // ]
 
   },
 
@@ -35,14 +37,15 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    console.log(app.globalData)
+     this.setData(app.globalData)
   },
 
   /**
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
-
+  
   },
 
   /**

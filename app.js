@@ -37,6 +37,7 @@ App({
     sports: [
       {category: "running",
       title: "5km running in Renmin Park",
+      like: 5,
       description: "5km leisure running in renmin park, join us on 28th 9am! Free drinks and snacks provided.",
       price: 0,
       start_time: "2018-11-28 09:00:00 -0800",
@@ -51,6 +52,7 @@ App({
       },
       {
         category: "tennis",
+        like: 7,
         title: "Fun & easy way to play more tennis",
         description: "If you love tennis, we’d love to have you! Also, if you’re looking to play more matches and you aren’t already in the PlayYourCourt Challenge League, you can go here to see what we’re all about and sign up.",
         price: 80,
@@ -66,6 +68,7 @@ App({
       },
       {
         category: "fitness",
+        like: 8,
         title: "800 Fitness Group",
         description: "Anyone can join that is eager to get fit, we will be using kettlebells, medballs, jump ropes, and body weight exercises to challenge the body and mind and have fun while building a community together. Participants will be engaging each other and focus on their body mechanics to facilitate a meditative movement experience.",
         price: 55,
@@ -81,6 +84,7 @@ App({
       },
       {
         category: "basketball",
+        like: 10,
         title: "3v3 Game in Zhongxing Green Field basketball court",
         description: "Hosted by previous professional play, join us if you want challenge. No beginners please. Remember to bring extra cloth, free drinks provided.",
         price: 15,
@@ -96,12 +100,13 @@ App({
       },
       {
         category: "hiking",
+        like: 7,
         title: "leisure hiking in sheshan",
         description: "Let's go hiking in sheshan! Just for leisure, fine to bring your kids, we can have nice dinner around after.",
         price: 0,
         start_time: "2018-12-4 15:00:00 -0800",
         end_time: "2018-12-4 18:00:00 -0800",
-        photo: "https://files.slack.com/files-pri/T02NE0241-FEBU9KCG0/image.png",
+        photo: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1543311155878&di=7c917e8732067c7c31187b0b04b9f64a&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3Dcb99228091504fc2b652b8468db48d64%2Fd4628535e5dde7117458ed7eadefce1b9c1661b4.jpg",
         province: "shanghai",
         city: "shanghai",
         district: "songjiang",
@@ -111,6 +116,7 @@ App({
       },
       {
         category: "football",
+        like: 3,
         title: "11 on 11 full court football match",
         description: "When was your last full court football game? Bring your friend and let's fight! Court has been reserved, just come!",
         price: 20,
