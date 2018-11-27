@@ -7,8 +7,8 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarBackgroundColor": "#ea5455",
+    "navigationBarTitleText": "Go Sports",
+    "navigationBarTextStyle":"white"
   }
 }

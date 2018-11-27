@@ -13,7 +13,7 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    const sport_id = 1;
+    const sport_id = options.id;
     const sports = app.globalData.sports;
     sports.forEach((sport) => {
       if (sport.id === sport_id) {
