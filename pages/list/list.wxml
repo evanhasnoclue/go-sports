@@ -1,7 +1,7 @@
 <!--pages/list/list.wxml-->
   <view class="list">
     <view wx:for="{{ sports }}" wx:for-item="sport" class="sport" wx:key="sport.id">
-      <image src="{{ sport.photo }}" mode="aspectFill"></image>
+      <image bindtap="showSport" src="{{ sport.photo }}" mode="aspectFill" data-id="{{sport.id}}"></image>
       <view class="info">
         <view class="title">{{ sport.title }}</view>
         <view class="rating">
