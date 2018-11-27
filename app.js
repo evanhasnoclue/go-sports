@@ -41,7 +41,7 @@ App({
       price: 0,
       start_time: "2018-11-28 09:00:00 -0800",
       end_time: "2018-11-28 10:00:00 -0800",
-      photo:"https://images.pexels.com/photos/1571939/pexels-photo-1571939.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350"
+      photo:"https://images.pexels.com/photos/1571939/pexels-photo-1571939.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350",
       province: "shanghai",
       city: "shanghai",
       district: "jingan",
@@ -90,7 +90,7 @@ App({
         province: "shanghai",
         city: "shanghai",
         district: "yangpu",
-        address: "799 zhongxing road"
+        address: "799 zhongxing road",
         capacity: 6,
         level: "senior"
       },
