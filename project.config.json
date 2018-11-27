@@ -48,6 +48,11 @@
 					"id": -1,
 					"name": "show",
 					"pathName": "pages/show/show"
+        },
+				{
+					"id": -1,
+					"name": "list",
+					"pathName": "pages/list/list"
 				}
 			]
 		}
