@@ -1,25 +1,28 @@
 <!--pages/show/show.wxml-->
 <view class='container'>
-  <view class='banner' style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('{{sports.photo}}')">
+  <view class='banner' style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('{{sport.photo}}')">
     <view class='font-lighter font-title font-white'>View mote photos</view>
   </view>
   <view class='event-info'>
     <view class='category-row'>
-    <view class='font-content font-bold'>{{sport.category}}</view>
+      <view class='font-content font-bold font-primary tag-border'>{{sport.category}}</view>
     </view>
-    <view class='event-intro card-shadow'>
+    <view class='event-intro card-shadow padding-left'>
       <view class='row-title'>
         <view class='font-title font-bold'>{{sport.title}}</view>
-        <image src='{{sport.user.avatarUrl}}'  class='avatar avatar-small' />
+        <image src='{{sport.user.avatarUrl}}' class='avatar avatar-small' />
+      </view>
+      <view class='row-price'>
+        <view class='font-title font-bold font-primary'>RMB {{sport.price}}/person</view>
       </view>
       <view class='row-location'>
-        <view class='font-content font-grey'>{{sport.address}}</view>
+        <view class='font-content font-grey'>{{sport.address}}, {{sport.district}}, {{sport.city}}, {{sport.province}}</view>
       </view>
-      <view class='row-time'>
-        <view class='font-content font-grey border-bottom'>{{sport.start_time}}-{{sport.end_time}}</view>
+      <view class='row-time  border-bottom'>
+        <view class='font-content font-grey'>{{sport.start_time}}-{{sport.end_time}}</view>
       </view>
       <view class='row-users'>
-        <view class='capacity item-center'>
+        <view class='capacity'>
           <view class='font-content'>{{sport.bookings.length}}/{{sport.capacity}}</view>
         </view>
         <view class='users'>
@@ -29,17 +32,18 @@
         </view>
       </view>
     </view>
-    <view class='description card-shadow'>
-    <view class='font-title'>Description</view>
-    <view class='font-content font-grey'>{{sport.description}}</view>
+    <view class='row-description card-shadow padding-left'>
+      <view class='font-title'>Description</view>
+      <view class='font-content font-grey'>{{sport.description}}</view>
     </view>
-    <view class='messages card-shadow margin-bottom'>
+    <view class='messages card-shadow margin-bottom padding-left'>
     </view>
-    <view class='actions'>
+
+  </view>
+  <view class='actions'>
     <view class='icons'></view>
     <view class='buttons'>
-    <button class='btn btn-small' bindtap='bookSports'>Join</button>
-    </view>
+      <button class='btn btn-small background-primary font-white' bindtap='bookSports'>Join</button>
     </view>
   </view>
 </view>
