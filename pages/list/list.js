@@ -68,6 +68,11 @@ Page({
   onUnload: function () {
 
   },
+  showSport: function (e) {
+    wx.navigateTo({
+      url: `../show/show?id=${e.target.dataset.id}`,
+    });
+  },
 
   /**
    * Page event handler function--Called when user drop down
