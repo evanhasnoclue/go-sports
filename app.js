@@ -35,7 +35,8 @@ App({
   },
   globalData: {
     sports: [
-      {category: "running",
+      {id: 1,
+      category: "running",
       title: "5km running in Renmin Park",
       like: 5,
       description: "5km leisure running in renmin park, join us on 28th 9am! Free drinks and snacks provided.",
@@ -51,6 +52,7 @@ App({
       level: "junior"
       },
       {
+        id: 2,
         category: "tennis",
         like: 7,
         title: "Fun & easy way to play more tennis",
@@ -67,6 +69,7 @@ App({
         level: "middle"
       },
       {
+        id:3,
         category: "fitness",
         like: 8,
         title: "800 Fitness Group",
@@ -83,6 +86,7 @@ App({
         level: "middle"
       },
       {
+        id:4,
         category: "basketball",
         like: 10,
         title: "3v3 Game in Zhongxing Green Field basketball court",
@@ -99,6 +103,7 @@ App({
         level: "senior"
       },
       {
+        id:5,
         category: "hiking",
         like: 7,
         title: "leisure hiking in sheshan",
@@ -115,6 +120,7 @@ App({
         level: "junior"
       },
       {
+        id:6,
         category: "football",
         like: 3,
         title: "11 on 11 full court football match",
