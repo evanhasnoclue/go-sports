@@ -53,7 +53,7 @@ Page({
   },
   toList: function(e) {
     wx.redirectTo({
-      url: 'pages/list/list',
+      url: '/pages/list/list',
     })
   }
 })
