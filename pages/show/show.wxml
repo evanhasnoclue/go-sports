@@ -1,0 +1,16 @@
+<!--pages/show/show.wxml-->
+<view class='container'>
+  <view class='banner' style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('{{sports.photo}}')">
+    <view class='text-lighter font-title'>View mote photos</view>
+  </view>
+  <view class='event-info'>
+    <view class='event-intro card-shadow'>
+    </view>
+    <view class='description card-shadow'>
+    </view>
+    <view class='messages card-shadow margin-bottom'>
+    </view>
+    <view class='actions'>
+    </view>
+  </view>
+</view>
