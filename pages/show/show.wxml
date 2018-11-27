@@ -4,8 +4,8 @@
     <view class='font-lighter font-title font-white'>View mote photos</view>
   </view>
   <view class='event-info'>
-    <view class='icons'>
-
+    <view class='category-row'>
+    <view class='font-content font-bold'>{{sport.category}}</view>
     </view>
     <view class='event-intro card-shadow'>
       <view class='row-title'>

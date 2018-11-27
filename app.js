@@ -35,7 +35,8 @@ App({
   },
   globalData: {
     sports: [
-      {category: "running",
+      {id: 1,
+      category: "running",
       title: "5km running in Renmin Park",
       description: "5km leisure running in renmin park, join us on 28th 9am! Free drinks and snacks provided.",
       price: 0,
@@ -50,6 +51,7 @@ App({
       level: "junior"
       },
       {
+        id: 2,
         category: "tennis",
         title: "Fun & easy way to play more tennis",
         description: "If you love tennis, we’d love to have you! Also, if you’re looking to play more matches and you aren’t already in the PlayYourCourt Challenge League, you can go here to see what we’re all about and sign up.",
@@ -65,6 +67,7 @@ App({
         level: "middle"
       },
       {
+        id:3,
         category: "fitness",
         title: "800 Fitness Group",
         description: "Anyone can join that is eager to get fit, we will be using kettlebells, medballs, jump ropes, and body weight exercises to challenge the body and mind and have fun while building a community together. Participants will be engaging each other and focus on their body mechanics to facilitate a meditative movement experience.",
@@ -80,6 +83,7 @@ App({
         level: "middle"
       },
       {
+        id:4,
         category: "basketball",
         title: "3v3 Game in Zhongxing Green Field basketball court",
         description: "Hosted by previous professional play, join us if you want challenge. No beginners please. Remember to bring extra cloth, free drinks provided.",
@@ -95,6 +99,7 @@ App({
         level: "senior"
       },
       {
+        id:5,
         category: "hiking",
         title: "leisure hiking in sheshan",
         description: "Let's go hiking in sheshan! Just for leisure, fine to bring your kids, we can have nice dinner around after.",
@@ -110,6 +115,7 @@ App({
         level: "junior"
       },
       {
+        id:6,
         category: "football",
         title: "11 on 11 full court football match",
         description: "When was your last full court football game? Bring your friend and let's fight! Court has been reserved, just come!",
