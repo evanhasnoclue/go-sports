@@ -1,16 +1,45 @@
 <!--pages/show/show.wxml-->
 <view class='container'>
   <view class='banner' style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('{{sports.photo}}')">
-    <view class='text-lighter font-title'>View mote photos</view>
+    <view class='font-lighter font-title font-white'>View mote photos</view>
   </view>
   <view class='event-info'>
+    <view class='icons'>
+
+    </view>
     <view class='event-intro card-shadow'>
+      <view class='row-title'>
+        <view class='font-title font-bold'>{{sport.title}}</view>
+        <image src='{{sport.user.avatarUrl}}'  class='avatar avatar-small' />
+      </view>
+      <view class='row-location'>
+        <view class='font-content font-grey'>{{sport.address}}</view>
+      </view>
+      <view class='row-time'>
+        <view class='font-content font-grey border-bottom'>{{sport.start_time}}-{{sport.end_time}}</view>
+      </view>
+      <view class='row-users'>
+        <view class='capacity item-center'>
+          <view class='font-content'>{{sport.bookings.length}}/{{sport.capacity}}</view>
+        </view>
+        <view class='users'>
+          <block wx:for='{{sport.bookings}}' wx:for-index="booking.id" wx:for-item="booking">
+            <image src='{{booking.user.avatarUrl}}' class='avatar avatar-small' />
+          </block>
+        </view>
+      </view>
     </view>
     <view class='description card-shadow'>
+    <view class='font-title'>Description</view>
+    <view class='font-content font-grey'>{{sport.description}}</view>
     </view>
     <view class='messages card-shadow margin-bottom'>
     </view>
     <view class='actions'>
+    <view class='icons'></view>
+    <view class='buttons'>
+    <button class='btn btn-small' bindtap='bookSports'>Join</button>
+    </view>
     </view>
   </view>
 </view>
