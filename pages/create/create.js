@@ -8,6 +8,7 @@ Page({
    * Page initial data
    */
   data: {
+    levels: ['junior', 'middle', 'expert'],
     region: ["Province", "City", "District"]
 
   },
@@ -68,6 +69,12 @@ Page({
       dateTimeArray2: dateArr,
       dateTime2: arr
     });
+  },
+  bindPickerChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      level: e.detail.value
+    })
   },
 
   takePhoto: function () {
@@ -167,7 +174,7 @@ Page({
       // url: 'https://event-meet-up.herokuapp.com/api/v1/events',
       method: 'POST',
       data: {
-        user_id: 1,
+        user_id: page.data.user_id,
         // page.data.user_id,
         title: e.detail.value.title,
         description: e.detail.value.description,

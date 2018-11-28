@@ -35,7 +35,7 @@
     <!-- </button> -->
   </view>
 
-<view class="section">
+<view class="section card-shadow">
   <view class="tui-picker-content">
     <view class="tui-picker-name">Start time</view>
     <picker mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime1" bindcolumnchange="changeDateTimeColumn1" range="{{dateTimeArray1}}">
@@ -66,12 +66,16 @@
 
 
 
-  <view class="section">
+  <view class="section card-shadow ">
     <view class="squre-input">
       <textarea value="{{capacity}}"  placeholder="capacity" name="capacity"/>
     </view>
     <view class="squre-input"> 
-      <textarea value="{{level}}" placeholder="level" name="level"/>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{levels}}">
+        <view class="picker">
+        <textarea value="{{levels[level]}}" placeholder="level" name="level"/>
+        </view>
+      </picker>
     </view>
     <view class="squre-input">
       <textarea value="{{price}}" placeholder="price" name="price"/>
@@ -87,6 +91,6 @@
 
 
 
-<button  style="margin-bottom:50px "type="primary" formType="submit" loading="{{loading}}">Submit</button>
+<button  style="margin-bottom:50px" class="btn" formType="submit" loading="{{loading}}">Submit</button>
   </form>
 

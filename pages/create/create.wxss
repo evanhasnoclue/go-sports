@@ -69,6 +69,8 @@ textarea {
   height:  100px;
   width: 100px;
   text-align: center;
+  margin: 10px 0;
+  border-radius: 5px;
   background-color: rgb(201, 201, 199)
 }
 
@@ -111,4 +113,16 @@ textarea {
   border-radius: 2px;
   border-left: 5px solid #9F9F9C;
   width: 90%
+}
+
+.btn {
+  background-color: #ea5455;
+  color: white;
+}
+
+.card-shadow {
+  box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+  margin-bottom: 5px;
+  border-radius: 5px;
+  margin: 15px 10px;
 }
