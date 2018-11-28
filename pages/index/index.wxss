@@ -1,7 +1,7 @@
 /**index.wxss**/
 .userinfo {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -18,4 +18,19 @@
 
 .usermotto {
   margin-top: 200px;
+}
+.container{
+  width: 100%;
+  background-image:url('https://images.unsplash.com/photo-1457470572216-1240fac24b37?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=55deb0321eb4f5c74de90337fc3847da&auto=format&fit=crop&w=800&q=60');
+background-size: cover;
+  height: 100vh;
+   display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.button{
+  background-color: rgba(255,255,255,0.3);
+   
 }

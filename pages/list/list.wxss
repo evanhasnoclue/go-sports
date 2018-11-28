@@ -1,28 +1,19 @@
 /* pages/list/list.wxss */
-.list{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: flex-start;
-  align-items: center;
-  padding: 0 20rpx;
-  margin-bottom: 28rpx;
-}
 
 /* .sport{
   color: #fff;
   margin-bottom: 12rpx;
 } */
 .sport {
-  position: relative;
-  width: 349rpx;
-  height: 349rpx;
-  border-radius: 8rpx;
-  vertical-align: bottom;
-  margin-bottom: 12rpx;
+  height: 120px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
+  color: white;
+  position: relative;
+  margin: 5px 16px;
+  margin-bottom: 10px;
+  border-radius: 10px;
 }
 .sport .mask{
   position: absolute;
