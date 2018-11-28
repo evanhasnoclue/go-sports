@@ -6,12 +6,12 @@
 
 <form bindsubmit="bindSubmit">
   <view class="wrapper text-center">
-    <view class='previewPhoto' bindtap='previewMyImage' style="background-image: url({{imageData}});">
+    <view class='photo-container' bindtap='takePhoto' style="background-image: url({{imageData}});">
     Add your banner here
     </view>
-    <view bindtap='takePhoto' class="photo-container">
+    <!-- <view bindtap='takePhoto' class="photo-container">
       Add photo
-    </view>
+    </view> -->
   </view>
 
   <view class="user-input">
@@ -26,13 +26,13 @@
     </view>
   </view>
 
-  <view class="user-input">
-    <view class="text-area-wrap">
-      <textarea value="{{address}}" style="input-size" placeholder="Address" class="input-height" name="address" maxlength="-1" auto-height />
+  <view class="user-input-2">
+    <view class="text-area-wrap-2">
+      <textarea value="{{address}}" style="input-size" placeholder="Address" class="input-height" name="address" auto-height />
     </view>
-    <button bindtap='selectLocation'>
-    <image style="width: 40px; height: 40px;" src="../../images/map.png"></image>
-    </button>
+    <!-- <button bindtap='selectLocation' class = 'btn-small'> -->
+    <image bindtap = 'selectLocation'  style="width: 40px; height: 40px;" src="../../images/map.png"></image>
+    <!-- </button> -->
   </view>
 
 <view class="section">
