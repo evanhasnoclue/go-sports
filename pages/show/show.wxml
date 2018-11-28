@@ -9,7 +9,7 @@
     </view>
     <view class='event-intro card-shadow padding-left'>
       <view class='row-title'>
-        <view class='font-title font-bold'>{{sport.title}}</view>
+        <view class='font-title font-bold' style="width: 80%;">{{sport.title}}</view>
         <image src='{{sport.user.avatarUrl}}' class='avatar avatar-small' />
       </view>
       <view class='row-price'>
@@ -78,12 +78,14 @@
     <image src='../../images/home-grey.png' class='icon' />
     <view class='margin-kill font-content font-grey'>home</view>
     </view>
-    <view class='icon-box'>
-    <image src='../../images/heart-grey.png' class='icon' />
-    <view class='margin-kill font-content font-grey'>{{sport.likes}}likes</view>
+    <view class='icon-box' bindtap='bindLike'>
+    <image src='../../images/heart-grey.png' class="icon {{liked ? 'hidden' : 'show'}}" />
+    <image src='../../images/heart-primary.png' class="icon {{liked ? 'show' : 'hidden'}}" />    
+    <view class='margin-kill font-content font-grey'>{{sport.like}}</view>
     </view>
     <view class='icon-box'>
     <image src='../../images/share-grey.png' class='icon' />
+    <image src='../../images/share-primary.png' class='icon hidden'  />
     <view class='margin-kill font-content font-grey'>share</view>
     </view>
     
