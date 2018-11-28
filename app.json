@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/list/list",
     "pages/show/show",
+    "pages/profile/profile",
     "pages/logs/logs"
   ],
   "window":{
@@ -20,7 +21,7 @@
         "text": "Explore sports"
       },
       {
-        "pagePath": "pages/show/show",
+        "pagePath": "pages/profile/profile",
         "iconPath": "images/user.png",
         "selectedIconPath": "images/user.png",
         "text": "Profile"

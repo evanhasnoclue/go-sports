@@ -52,7 +52,7 @@ Page({
     })
   },
   toList: function(e) {
-    wx.redirectTo({
+    wx.switchTab({
       url: '/pages/list/list',
     })
   }
