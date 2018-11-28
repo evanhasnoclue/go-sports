@@ -10,5 +10,21 @@
     "navigationBarBackgroundColor": "#ea5455",
     "navigationBarTitleText": "Go Sports",
     "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/list/list",
+        "iconPath": "images/dumbbell.png",
+        "selectedIconPath": "images/dumbbell.png",
+        "text": "Explore sports"
+      },
+      {
+        "pagePath": "pages/show/show",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user.png",
+        "text": "Profile"
+      }
+    ]
   }
 }
