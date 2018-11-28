@@ -5,7 +5,8 @@
     "pages/show/show",
     "pages/profile/profile",
     "pages/create/create",
-    "pages/logs/logs" 
+    "pages/logs/logs",
+    "pages/maps/maps"
   ],
   "window":{
     "backgroundTextStyle":"light",

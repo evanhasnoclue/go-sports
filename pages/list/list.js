@@ -5,34 +5,7 @@ Page({
   data: {
     sports: [],
     inputShowed: false,
-    inputVal: ""
-    // sports: [
-    //   {
-    //     "id":1,
-    //     "title":"Boxing basic",
-    //     "rating_users":5,
-    //     "photo":"/images/cover1.jpg"
-    //   },
-    //   {
-    //     "id": 2,
-    //     "title": "Tennismatch",
-    //     "rating_users": 7,
-    //     "photo":"/images/cover2.jpg"
-    //   },
-    //   {
-    //     "id": 3,
-    //     "title": "Balanceexercise",
-    //     "rating_users": 5,
-    //     "photo": "/images/cover3.jpeg"
-    //   },
-    //   {
-    //     "id": 4,
-    //     "name": "Running match",
-    //     "rating_users": 10,
-    //     "cover": "/images/cover4.png"
-    //   },
-    // ]
-
+    inputVal: "",
   },
 
   showInput: function () {
@@ -60,8 +33,16 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    console.log(app.globalData)
-     this.setData(app.globalData)
+    const page = this
+    console.log(111,page)
+    wx.request({
+      url: 'http://localhost:3000/api/v1/sports',
+    success(res){
+      console.log(122,res)
+      page.setData({sports: res.data.sports})
+    }
+    })
+  
   },
 
   /**

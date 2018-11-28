@@ -42,11 +42,15 @@
     </view>
 </view>
 
+
+
   <view class="list">
     <block wx:for="{{ sports }}" wx:for-item="sport"  wx:key="sport.id">
       <!-- <view class="sport"> -->
         <!-- <image bindtap="showSport" src="{{ sport.photo }}" mode="aspectFill" data-id="{{sport.id}}"></image> -->
       <view class="sport" bindtap="showSport" data-id="{{sport.id}}" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)),url({{sport.photo}});">
+                <view class='category'>{{sport.category}}</view>
+   
         <view class="info">
           <view class="title">{{ sport.title }}</view>
           <view class="count">{{ sport.like }}人点赞</view>

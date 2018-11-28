@@ -40,6 +40,13 @@
   bottom: 20rpx;
   z-index: 2;
 }
+.category{
+position: absolute;
+color: white;
+top: 1px;
+left:10px;
+
+}
 .sport .title{
   font-size: 32rpx;
   font-weight: bold;
@@ -96,3 +103,4 @@
 .weui-cell{
     padding: 12px 15px 12px 35px;
 }
+
