@@ -12,6 +12,40 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    var that = this;
+    wx.getStorage({
+      key: 'current_user',
+      success: (res) => {
+        if (res.data.gender == "2") {
+          res.data.gender = "女"
+        }
+        if (res.data.gender == "1") {
+          res.data.gender = "男"
+        }
+        const profile = res.data;
+        that.setData({
+          profile: profile
+        })
+      }
+    })
+
+    wx.request({
+      url: "http://localhost:3000/api/v1/sports",
+      method: 'GET',
+      success(res) {
+        console.log(res);
+        const sports = res.data.sports;
+
+        // Update local data
+        that.setData({
+          sports
+        });
+        console.log(sports);
+
+        // wx.hideToast();
+      }
+    });
+
 
   },
 
