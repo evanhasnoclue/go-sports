@@ -1,7 +1,7 @@
 <!--pages/show/show.wxml-->
 <view class='container'>
   <view class='banner' style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('{{sport.photo}}')">
-    <view class='font-lighter font-title font-white'>View mote photos</view>
+    <view class='font-lighter font-title font-white'>View more photos</view>
   </view>
   <view class='event-info'>
     <view class='category-row'>
@@ -37,17 +37,59 @@
       <view class='font-content font-grey'>{{sport.description}}</view>
     </view>
     <view class='messages card-shadow margin-bottom padding-left'>
-    <view class='font-title'>Messages</view>
-    <block wx:for='sport.messages' wx:for-item='message' wx:key='message.id' >
-    <view class='font-content font-grey'>{{message.content}}</view>
-    </block>
+      <view class='message-action'>
+      <view class='font-title'>Messages</view>
+      <view class='font-title font-primary btn-text' bindtap='newMessage'>Leave Msg</view>
+      </view>
+      <block wx:for='{{sport.messages}}' wx:for-item='message' wx:key='message.id'>
+        <view class='message-box border-bottom'>
+          <view class='message-title'>
+            <view class='message-user'>
+              <image src='{{message.user.avatarUrl}}' class='avatar avatar-small' />
+              <view class='font-content font-grey'>{{message.user.nickname}}</view>
+            </view>
+            <view class='message-time font-content font-grey'>{{message.msg_time}}</view>
+          </view>
+          <view class='message-body font-content font-grey'>{{message.content}}</view>
+          <view wx:if='{{message.replies.length>0}}' class='replies'>
+          <view class='replies-action'>
+          <view class='font-content font-lighter'>Replies</view>
+          <view class='font-content font-primary btn-text' bindtap='newReply'>Add New</view>
+          </view>
+            <block wx:for='{{message.replies}}' wx:key='reply.id' wx:for-item='reply'>
+              <view class='message-box'>
+                <view class='message-title'>
+                  <view class='font-content font-grey'>{{reply.user_id}}</view>
+                  <view class='font-content font-grey'>{{reply.msg_time}}</view>
+                </view>
+                <view class='message-body font-content font-grey'>{{reply.content}}</view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </block>
     </view>
 
   </view>
-  <view class='actions'>
-    <view class='icons'></view>
+  <view class='row-actions'>
+    <view class='icons'>
+    <!-- <image src='../../images/favorite-grey.png' class='icon' />     -->
+    <view class='icon-box'>
+    <image src='../../images/home-grey.png' class='icon' />
+    <view class='margin-kill font-content font-grey'>home</view>
+    </view>
+    <view class='icon-box'>
+    <image src='../../images/heart-grey.png' class='icon' />
+    <view class='margin-kill font-content font-grey'>{{sport.likes}}likes</view>
+    </view>
+    <view class='icon-box'>
+    <image src='../../images/share-grey.png' class='icon' />
+    <view class='margin-kill font-content font-grey'>share</view>
+    </view>
+    
+    </view>
     <view class='buttons'>
-      <button class='btn btn-small background-primary font-white' bindtap='bookSports'>Join</button>
+      <button class='btn btn-small' bindtap='bookSports'>Join</button>
     </view>
   </view>
 </view>
