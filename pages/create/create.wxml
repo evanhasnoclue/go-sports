@@ -1,0 +1,67 @@
+
+  <view class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/berlin');">
+  <h1>Go Travel Together</h1>
+  </view>
+
+
+<form bindsubmit="bindSubmit">
+  <view class="user-input">
+    <view class="text-area-wrap">
+      <textarea value="{{title}}" style="input-size" placeholder="Title" class="input-height" name="title" maxlength="-1" auto-height />
+    </view>
+  </view>
+
+
+  <view class="section">
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <view class="picker">
+      {{region[0]}} - {{region[1]}} - {{region[2]}}
+      </view>
+    </picker>
+  </view>
+
+  <view class="user-input">
+    <view class="text-area-wrap">
+      <textarea value="{{address}}" style="input-size" placeholder="Detailed Address" class="input-height" name="address" maxlength="-1" auto-height />
+    </view>
+    <button bindtap='selectLocation'>map</button>
+  </view>
+
+<!-- <picker name='time' mode="date" value="{{date1}}" start="2018-09-01" end="2028-09-01" bindchange="bindDateChange1">
+</picker>
+
+ <picker name='deadline' mode="date" value="{{date2}}" start="2018-09-01" end="2028-09-01" bindchange="bindDateChange2">
+        <view class="weui-input">{{date2}}</view>
+  </picker> -->
+
+
+
+
+  <view class="section">
+    <view class="squre-input">
+      <textarea value="{{capacity}}"  placeholder="capacity" name="address"/>
+    </view>
+    <view class="squre-input"> 
+      <textarea value="{{level}}" placeholder="level" name="level"/>
+    </view>
+    <view class="squre-input">
+      <textarea value="{{price}}" placeholder="price" name="price"/>
+    </view>
+  </view>
+
+  <view class="user-input">
+    <view class="text-area-wrap">
+      <textarea value="{{description}}" style="input-size" placeholder="Description" class="input-height" name="title" maxlength="-1" auto-height />
+    </view>
+  </view>
+  
+<view class="wrapper">
+  <view bindtap='takePhoto' class="photo-container">
+    Add photo
+  </view>
+</view>
+
+
+<button  style="margin-bottom:50px "type="primary" formType="submit" loading="{{loading}}">Submit</button>
+  </form>
+
