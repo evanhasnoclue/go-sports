@@ -6,7 +6,7 @@ Page({
    * Page initial data
    */
   data: {
-
+    liked: false
   },
 
   /**
@@ -24,6 +24,29 @@ Page({
         page.setData({
           sport: res.data
         });
+      }
+    })
+  },
+
+  bindLike: function(e) {
+    let page = this;
+    const liked_status = this.data.liked;
+    const likes = this.data.sport.like;
+    if (liked_status) {
+      this.data.sport.like = likes - 1;
+    } else {
+      this.data.sport.like = likes + 1;
+    }
+    this.setData({
+      liked: !liked_status,
+      sport: this.data.sport
+    })
+    wx.request({
+      url: app.globalData.url + '/sports/' + page.data.sport.id,
+      method: 'PUT',
+      data:  page.data.sport,
+      success: (res) => {
+        console.log(res);
       }
     })
   },
