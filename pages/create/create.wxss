@@ -1,0 +1,73 @@
+/* pages/submit/submit.wxss */
+/* pages/new/new.wxss */
+.h2-header {
+ color: black;
+  font-size: 50rpx;
+  font-weight: bold;
+  padding: 10px;
+}
+/* Avatar */
+.userinfo-avatar {
+  width:180rpx;
+  height:180rpx;
+  margin:20rpx;
+  border-radius:50%;
+}
+
+/* form style */
+.user-input {
+  width: 100%;
+  margin-bottom: 35rpx;
+}
+.input-height {
+  height: 10em;
+}
+.input-label {
+  font-size: 35rpx;
+}
+textarea {
+  padding: 10rpx 0;
+  font-size: 35rpx;
+  width: 100%;
+}
+.text-area-wrap {
+  padding: 15rpx 15rpx;
+  background-color: #fff;
+  margin-top:8px;
+  border-radius: 2px;
+  border-left: 5px solid #9F9F9C;
+}
+
+.banner {
+  color: white;
+  text-align: center;
+  height: 50px;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner h1 {
+  font-size: 30px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+.banner p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: rgb(255, 255, 255);
+  opacity: 0.6;
+  margin-bottom: 30px;
+}
+.section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center
+}
+.squre-input {
+  height:  100px;
+  width: 100px;
+  text-align: center;
+  background-color: bisque;
+}

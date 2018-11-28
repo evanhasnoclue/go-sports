@@ -4,7 +4,8 @@
     "pages/list/list",
     "pages/show/show",
     "pages/profile/profile",
-    "pages/logs/logs"
+    "pages/create/create",
+    "pages/logs/logs" 
   ],
   "window":{
     "backgroundTextStyle":"light",
