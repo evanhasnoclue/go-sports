@@ -44,8 +44,8 @@
 
 
 
-  <view class="list">
-    <block wx:for="{{ sports }}" wx:for-item="sport"  wx:key="sport.id">
+  
+    <block  wx:for="{{ sports }}" wx:for-item="sport"  wx:key="sport.id" class="card">
       <!-- <view class="sport"> -->
         <!-- <image bindtap="showSport" src="{{ sport.photo }}" mode="aspectFill" data-id="{{sport.id}}"></image> -->
       <view class="sport" bindtap="showSport" data-id="{{sport.id}}" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)),url({{sport.photo}});">
@@ -55,7 +55,6 @@
           <view class="title">{{ sport.title }}</view>
           <view class="count">{{ sport.like }}人点赞</view>
         </view>
-          <view class="mask"></view>
       </view>
     </block>
-  </view>
+  
