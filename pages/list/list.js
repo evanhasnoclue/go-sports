@@ -37,7 +37,6 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    console.log(app.globalData)
      this.setData(app.globalData)
   },
 
