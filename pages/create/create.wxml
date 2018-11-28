@@ -1,36 +1,65 @@
-
+<!-- 
   <view class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/berlin');">
   <h1>Go Travel Together</h1>
-  </view>
+  </view> -->
 
 
 <form bindsubmit="bindSubmit">
+  <view class="wrapper text-center">
+    <view class='photo-container' bindtap='takePhoto' style="background-image: url({{imageData}});">
+    Add your banner here
+    </view>
+    <!-- <view bindtap='takePhoto' class="photo-container">
+      Add photo
+    </view> -->
+  </view>
+
   <view class="user-input">
     <view class="text-area-wrap">
       <textarea value="{{title}}" style="input-size" placeholder="Title" class="input-height" name="title" maxlength="-1" auto-height />
     </view>
   </view>
 
+  <view class="user-input">
+    <view class="text-area-wrap">
+      <textarea value="{{category}}" style="input-size" placeholder="Category" class="input-height" name="category" maxlength="-1" auto-height />
+    </view>
+  </view>
 
-  <view class="section">
-    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
-      <view class="picker">
-      {{region[0]}} - {{region[1]}} - {{region[2]}}
-      </view>
+  <view class="user-input-2">
+    <view class="text-area-wrap-2">
+      <textarea value="{{address}}" style="input-size" placeholder="Address" class="input-height" name="address" auto-height />
+    </view>
+    <!-- <button bindtap='selectLocation' class = 'btn-small'> -->
+    <image bindtap = 'selectLocation'  style="width: 40px; height: 40px;" src="../../images/map.png"></image>
+    <!-- </button> -->
+  </view>
+
+<view class="section">
+  <view class="tui-picker-content">
+    <view class="tui-picker-name">Start time</view>
+    <picker mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime1" bindcolumnchange="changeDateTimeColumn1" range="{{dateTimeArray1}}">
+    <view class="tui-picker-detail">
+    <textarea value="{{dateTimeArray1[0][dateTime1[0]]}}-{{dateTimeArray1[1][dateTime1[1]]}}-{{dateTimeArray1[2][dateTime1[2]]}} {{dateTimeArray1[3][dateTime1[3]]}}:{{dateTimeArray1[4][dateTime1[4]]}}" style="input-size" placeholder="start time"  name="start_time" />
+    </view>
     </picker>
   </view>
 
-  <view class="user-input">
-    <view class="text-area-wrap">
-      <textarea value="{{address}}" style="input-size" placeholder="Detailed Address" class="input-height" name="address" maxlength="-1" auto-height />
+  <view class="tui-picker-content">
+    <view class="tui-picker-name">End time</view>
+    <picker mode="multiSelector" value="{{dateTime2}}" bindchange="changeDateTime2" bindcolumnchange="changeDateTimeColumn2" range="{{dateTimeArray2}}">
+    <view class="tui-picker-detail">
+    <textarea value="{{dateTimeArray2[0][dateTime2[0]]}}-{{dateTimeArray2[1][dateTime2[1]]}}-{{dateTimeArray2[2][dateTime2[2]]}} {{dateTimeArray2[3][dateTime2[3]]}}:{{dateTimeArray2[4][dateTime2[4]]}}" style="input-size" placeholder="start time"  name="end_time" />
     </view>
-    <button bindtap='selectLocation'>map</button>
+    </picker>
   </view>
 
-<!-- <picker name='time' mode="date" value="{{date1}}" start="2018-09-01" end="2028-09-01" bindchange="bindDateChange1">
-</picker>
+</view>
 
- <picker name='deadline' mode="date" value="{{date2}}" start="2018-09-01" end="2028-09-01" bindchange="bindDateChange2">
+<!-- <picker name='start_time' mode="time" value="{{start_time}}" start="2018-09-01" end="2028-09-01" bindchange="bindTimeChange1">
+</picker> -->
+
+ <!-- <picker name='deadline' mode="date" value="{{date2}}" start="2018-09-01" end="2028-09-01" bindchange="bindDateChange2">
         <view class="weui-input">{{date2}}</view>
   </picker> -->
 
@@ -39,7 +68,7 @@
 
   <view class="section">
     <view class="squre-input">
-      <textarea value="{{capacity}}"  placeholder="capacity" name="address"/>
+      <textarea value="{{capacity}}"  placeholder="capacity" name="capacity"/>
     </view>
     <view class="squre-input"> 
       <textarea value="{{level}}" placeholder="level" name="level"/>
@@ -51,15 +80,11 @@
 
   <view class="user-input">
     <view class="text-area-wrap">
-      <textarea value="{{description}}" style="input-size" placeholder="Description" class="input-height" name="title" maxlength="-1" auto-height />
+      <textarea value="{{description}}" style="input-size" placeholder="Description" class="input-height" name="description" maxlength="-1" auto-height />
     </view>
   </view>
   
-<view class="wrapper">
-  <view bindtap='takePhoto' class="photo-container">
-    Add photo
-  </view>
-</view>
+
 
 
 <button  style="margin-bottom:50px "type="primary" formType="submit" loading="{{loading}}">Submit</button>

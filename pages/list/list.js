@@ -42,7 +42,6 @@ Page({
       page.setData({sports: res.data.sports})
     }
     })
-  
   },
 
   /**
