@@ -10,16 +10,19 @@
   margin-bottom: 28rpx;
 }
 
-.sport{
+/* .sport{
   color: #fff;
-  position: relative;
   margin-bottom: 12rpx;
-}
-.sport image{
+} */
+.sport {
+  position: relative;
   width: 349rpx;
   height: 349rpx;
   border-radius: 8rpx;
   vertical-align: bottom;
+  margin-bottom: 12rpx;
+  background-size: cover !important;
+  background-position: center;
 }
 .sport .mask{
   position: absolute;
@@ -42,6 +45,7 @@
   font-weight: bold;
   padding-right: 28rpx;
   text-shadow: 2rpx 4rpx rgba(0, 0, 0, .12);
+  color: white;
 }
 .sport .m-rating{
   float: left;
@@ -54,11 +58,11 @@
   top: 6rpx;
   margin-right: 8rpx;
 }
-.sport .rating .count{
+.sport .count{
   float: left;
   margin-left: 10rpx;
-  font-size: 20rpx;
-  color: rgba(255, 255, 255, .6);
+  font-size: 30rpx;
+  color: rgba(280, 255, 255, .6);
   text-shadow: 2rpx 4rpx rgba(0, 0, 0, .12);
 }
 .all{
