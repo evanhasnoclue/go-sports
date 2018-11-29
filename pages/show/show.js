@@ -6,7 +6,8 @@ Page({
    * Page initial data
    */
   data: {
-    liked: false
+    liked: false,
+    new_message: false
   },
 
   /**
@@ -82,9 +83,103 @@ Page({
         user_id: page.data.current_user_id
       },
       success: (res) => {
-        console.log('booking', res.data);
+        page.setData({
+          booking: res.data
+        });
+        page.onLoad({id: page.data.sport.id})
       }
     })
+  },
+
+  cancelBooking: function(e) {
+    let page=this;
+    wx.request({
+      url: `${app.globalData.url}/sports/${page.data.sport.id}/bookings/${page.data.booking.id}`,
+      method: 'DELETE',
+      success: (res) => {
+        console.log(222,res);
+        page.setData({
+          booking:false
+        });
+        page.onLoad({ id: page.data.sport.id })
+      }
+    })
+  },
+
+  deleteSports: function(e) {
+    let page = this;
+    wx.request({
+      url: `${app.globalData.url}/sports/${page.data.sport.id}`,
+      method: 'DELETE',
+      success: (res) =>{
+        console.log(333,res);
+        wx.switchTab({
+          url: '/pages/profile/profile',
+        })
+      }
+    })
+  },
+
+  newMessage: function(e) {
+    console.log(e.currentTarget);
+    const status = this.data.new_message;
+    this.setData({
+      new_message: !status,
+      message_tag: e.currentTarget.dataset
+    })
+  },
+
+  submitMessage: function(e) {
+    console.log(e);
+    wx.showLoading({
+      title: 'Loading...',
+    })
+    let page = this;
+    const message_tag = this.data.message_tag;
+    if (message_tag.tag==='message') {
+      wx.request({
+        url: `${app.globalData.url}/sports/${page.data.sport.id}/messages`,
+        method: 'POST',
+        data: {
+          user_id: page.data.current_user_id,
+          content:e.detail.value.content,
+          sport_id: page.data.sport.id
+        },
+        success: (res) => {
+          page.setData({
+            new_message:false
+          });
+          page.onLoad({id: page.data.sport.id});
+          wx.hideLoading();
+          wx.showToast({
+            title: 'Success!',
+            icon: 'success',
+            duration: 2000
+          });
+        }
+      })
+    } else if (message_tag.tag === 'reply') {
+      wx.request({
+        url: `${app.globalData.url}/messages/${message_tag.id}/replies`,
+        method: 'POST',
+        data: {
+          user_id: page.data.current_user_id,
+          content: e.detail.value.content
+        },
+        success: (res) => {
+          page.setData({
+            new_message: false
+          });
+          page.onLoad({ id: page.data.sport.id });
+          wx.hideLoading();
+          wx.showToast({
+            title: 'Success!',
+            icon: 'success',
+            duration: 2000
+          });
+        }
+      })
+    }
   },
 
   /**
