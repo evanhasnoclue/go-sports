@@ -80,7 +80,7 @@ Page({
       url: app.globalData.url + '/sports',
     success(res){
       console.log(122,res)
-      page.setData({sports: res.data.sports})
+      page.setData({sports: res.data.sports.reverse()})
     }
     })
   },
