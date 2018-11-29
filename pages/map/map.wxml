@@ -1,0 +1,16 @@
+<map  bindmarkertap="markertap" longitude="{{longitude}}" latitude="{{latitude}}" scale= "{{scale}}" style="width: 100%; height: 60vh;" markers="{{mk}}" show-location include-points="{{mk}}"></map>
+
+<scroll-view  style="width: 100%; height: 40vh;" scroll-y>
+      <block  wx:for="{{ sports }}" wx:for-item="sport"  wx:key="sport.id" class="card">
+      <!-- <view class="sport"> -->
+        <!-- <image bindtap="showSport" src="{{ sport.photo }}" mode="aspectFill" data-id="{{sport.id}}"></image> -->
+      <view class="sport" bindtap="showSport" data-id="{{sport.id}}" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)),url({{sport.photo}});">
+                <view class='category'>{{sport.category}}</view>
+   
+        <view class="info">
+          <view class="title">{{ sport.title }}</view>
+          <view class="count">{{ sport.like }}人点赞</view>
+        </view>
+      </view>
+    </block>
+</scroll-view>

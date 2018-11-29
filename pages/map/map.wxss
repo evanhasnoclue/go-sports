@@ -1,0 +1,114 @@
+/* pages/list/list.wxss */
+
+/* .sport{
+  color: #fff;
+  margin-bottom: 12rpx;
+} */
+.sport {
+  height: 120px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+  margin: 5px 16px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+.sport .mask{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 90rpx;
+  border-radius: 0 0 8rpx 8rpx;
+  background-image: linear-gradient(to top,rgba(0, 0, 0, .8),rgba(0, 0, 0, 0));
+  z-index: 1;
+}
+.sport .info{
+  position: absolute;
+  left: 28rpx;
+  bottom: 20rpx;
+  z-index: 2;
+}
+.category{
+position: absolute;
+color: white;
+top: 1px;
+left:10px;
+
+}
+.sport .title{
+  font-size: 32rpx;
+  font-weight: bold;
+  padding-right: 28rpx;
+  text-shadow: 2rpx 4rpx rgba(0, 0, 0, .12);
+  color: white;
+}
+.sport .m-rating{
+  float: left;
+}
+.sport .m-rating image{
+  width: 16rpx;
+  height: 16rpx;
+  float: left;
+  position: relative;
+  top: 6rpx;
+  margin-right: 8rpx;
+}
+.sport .count{
+  float: left;
+  margin-left: 10rpx;
+  font-size: 30rpx;
+  color: rgba(280, 255, 255, .6);
+  text-shadow: 2rpx 4rpx rgba(0, 0, 0, .12);
+}
+.all{
+  color: #999;
+  font-size: 30rpx;
+  border: 1rpx solid #b0b0b0;
+  border-radius: 80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  margin: 0 20rpx 40rpx;
+}
+
+.searchbar-result{
+    margin-top: 0;
+    font-size: 14px;
+}
+.searchbar-result:before{
+    display: none;
+}
+.weui-cell{
+    padding: 12px 15px 12px 35px;
+}
+.searchbar-result{
+    margin-top: 0;
+    font-size: 14px;
+}
+.searchbar-result:before{
+    display: none;
+}
+.weui-cell{
+    padding: 12px 15px 12px 35px;
+}
+.picker{
+  font-size: 14px;
+  padding:5px;
+  border-style: light;
+}
+.filters{
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
+ padding: 0
+}
+.filter{
+  display: flex;
+  padding:5px;
+  align-items: center;
+  margin:0
+}
+
