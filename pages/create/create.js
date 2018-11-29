@@ -170,8 +170,8 @@ Page({
   bindSubmit: function(e){
     let page = this;
     wx.request({
-      url: 'http://localhost:3000/api/v1/sports',
-      // url: 'https://event-meet-up.herokuapp.com/api/v1/events',
+      // url: 'http://localhost:3000/api/v1/sports',
+      url: app.globalData.url + '/sports',
       method: 'POST',
       data: {
         user_id: page.data.user_id,

@@ -24,6 +24,22 @@ Page({
         page.setData({
           sport: res.data
         });
+        wx.getStorage({
+          key: 'current_user',
+          success: function(user) {
+            page.setData({
+              current_user_id: user.data.id
+            });
+            page.data.sport.bookings.forEach((booking) => {
+              console.log(111,booking);
+              if (booking.user.id===user.data.id) {
+                page.setData({
+                  booking: booking
+                })
+              }
+            })
+          },
+        })
       }
     })
   },
@@ -40,13 +56,33 @@ Page({
     this.setData({
       liked: !liked_status,
       sport: this.data.sport
-    })
+    });
     wx.request({
       url: app.globalData.url + '/sports/' + page.data.sport.id,
       method: 'PUT',
       data:  page.data.sport,
       success: (res) => {
         console.log(res);
+      }
+    })
+  },
+
+  onShareAppMessage: function () {
+    wx.showShareMenu({
+      withShareTicket: true
+    })
+  },
+
+  bookSports: function(e) {
+    let page = this;
+    wx.request({
+      url: `${app.globalData.url}/sports/${page.data.sport.id}/bookings`,
+      method: 'POST',
+      data: {
+        user_id: page.data.current_user_id
+      },
+      success: (res) => {
+        console.log('booking', res.data);
       }
     })
   },

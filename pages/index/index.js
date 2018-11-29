@@ -23,7 +23,7 @@ Page({
       success: (res) => {
         console.log(res)
         wx.request({
-          url: "http://localhost:3000/api/v1/login",
+          url: app.globalData.url + "/login",
           method: 'post',
           data: {
             code: res.code
@@ -57,7 +57,7 @@ Page({
           open_id: res.data
         };
         wx.request({
-          url: 'http://localhost:3000/api/v1/users',
+          url: app.globalData.url + '/users',
           method: 'POST',
           data: { user_data: user_data },
           success: (res) => {

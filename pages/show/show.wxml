@@ -74,7 +74,7 @@
   <view class='row-actions'>
     <view class='icons'>
     <!-- <image src='../../images/favorite-grey.png' class='icon' />     -->
-    <view class='icon-box'>
+    <view class='icon-box' bindtap='bindHome' >
     <image src='../../images/home-grey.png' class='icon' />
     <view class='margin-kill font-content font-grey'>home</view>
     </view>
@@ -85,13 +85,16 @@
     </view>
     <view class='icon-box'>
     <image src='../../images/share-grey.png' class='icon' />
-    <image src='../../images/share-primary.png' class='icon hidden'  />
-    <view class='margin-kill font-content font-grey'>share</view>
+    <view class='margin-kill font-content font-grey' bindtap='onShareAppMessage' >share</view>
     </view>
     
     </view>
     <view class='buttons'>
-      <button class='btn btn-small' bindtap='bookSports'>Join</button>
+      <block wx:if='{{current_user_id!=sport.user.id}}'>
+      <button wx:if='{{!booking}}' class='btn btn-small' bindtap='bookSports'>Join</button>
+      <button wx:if='{{booking}}' class='btn btn-small' bindtap='cancelBooking'>Cancel</button>
+      </block>
+      <button wx:if='{{current_user_id===sport.user.id}}' class='btn btn-small' bindtap='deleteSports'>Delete</button>
     </view>
   </view>
 </view>
