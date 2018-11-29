@@ -12,7 +12,8 @@ Page({
     region: ["Province", "City", "District"],
      array: ['健身', '跑步', '登山', '游泳','篮球','足球','乒乓球'],
     index: 0,
-
+    start_time:"2018-12-30 17:00",
+    end_time:"2018-12-30 17:00"
   },
 
   /**
@@ -58,8 +59,10 @@ Page({
     dateArr[2] = dateTimePicker.getMonthDay(dateArr[0][arr[0]], dateArr[1][arr[1]]);
     this.setData({
       dateTimeArray1: dateArr,
-      dateTime1: arr
+      dateTime1: arr,
+      start_time: `${ dateArr[0][arr[0]] }-${ dateArr[1][arr[1]] }-${ dateArr[2][arr[2]] } ${ dateArr[3][arr[3]] }:${ dateArr[4][arr[4]] }`
     });
+  
   },
 
   changeDateTimeColumn2(e) {
@@ -69,7 +72,8 @@ Page({
     dateArr[2] = dateTimePicker.getMonthDay(dateArr[0][arr[0]], dateArr[1][arr[1]]);
     this.setData({
       dateTimeArray2: dateArr,
-      dateTime2: arr
+      dateTime2: arr,
+      end_time: `${dateArr[0][arr[0]]}-${dateArr[1][arr[1]]}-${dateArr[2][arr[2]]} ${dateArr[3][arr[3]]}:${dateArr[4][arr[4]]}`
     });
   },
   bindPickerChange: function (e) {
@@ -181,8 +185,8 @@ Page({
         title: e.detail.value.title,
         description: e.detail.value.description,
         category: e.detail.value.category,
-        start_time: e.detail.value.start_time,
-        end_time: e.detail.value.end_time,
+        start_time: page.data.start_time,
+        end_time: page.data.end_time,
         price: e.detail.value.price,
         level: e.detail.value.level,
         capacity: e.detail.value.capacity,
