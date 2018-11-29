@@ -16,6 +16,7 @@ Page({
     const page = this;
     let title = page.data.inputVal || ''; 
     let level = page.data.levels[page.data.level] || '';
+    if (page.data.level == "All") { level = "" };
     let start_time = page.data.date || ''; 
     if (page.data.date == "Date" || page.data.date == "ALL" ) {start_time = ""};
     let province = page.data.province || ''; 
@@ -32,7 +33,8 @@ Page({
     let page = this;
     page.setQuery();
     wx.request({
-      url: 'http://localhost:3000/api/v1/query?' + page.data.query,
+      url: app.globalData.url + '/query?' + page.data.query,
+      // url: 'http://localhost:3000/api/v1/query?' + page.data.query,
       success(res) {
         console.log(123, res)
         page.setData({ sports: res.data.sports })
@@ -53,14 +55,6 @@ Page({
       inputShowed: false
     });
     page.getQuery()
-    // wx.request({
-    //   // url: app.globalData.url + page.data.inputVal,
-    //   url: 'http://localhost:3000/api/v1/query?query=' + page.data.inputVal,
-    //   success(res) {
-    //     console.log(123, res)
-    //     page.setData({ sports: res.data.sports })
-    //   }
-    // })
   },
   clearInput: function () {
     let page = this;
@@ -89,6 +83,12 @@ Page({
       page.setData({sports: res.data.sports})
     }
     })
+  },
+
+  showMap: function() {
+      wx.navigateTo({
+        url: '/pages/map/map'
+      });
   },
 
   /**
@@ -131,14 +131,7 @@ Page({
       date: e.detail.value
     });
     page.getQuery();
-    // wx.request({
-    //   // url: app.globalData.url + page.data.inputVal,
-    //   url: 'http://localhost:3000/api/v1/query?query=' + page.data.date,
-    //   success(res) {
-    //     console.log(123, res)
-    //     page.setData({ sports: res.data.sports })
-    //   }
-    // })
+
   },
   bindRegionChange: function (e) {
     let page = this;
@@ -158,16 +151,7 @@ Page({
       level: e.detail.value
     });
     page.getQuery()
-    // page.setQuery()
-    // wx.request({
-    //   // url: app.globalData.url + page.data.inputVal,
-    //   url: 'http://localhost:3000/api/v1/query?' + page.data.query,
-    //   // url: 'http://localhost:3000/api/v1/query?query=' + page.data.levels[page.data.level],
-    //   success(res) {
-    //     console.log(123, res)
-    //     page.setData({ sports: res.data.sports })
-    //   }
-    // })
+
   },
 
   /**
