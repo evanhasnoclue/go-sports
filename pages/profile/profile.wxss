@@ -88,5 +88,8 @@ page,
   color: white;
 }
 
-
+.color-primary {
+  color: #ea5455;
+  border-bottom: 1rpx solid #ea5455;
+}
 

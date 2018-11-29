@@ -1,4 +1,5 @@
 // pages/profile/profile.js
+let app = getApp();
 var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
 const {
   $Message
@@ -102,28 +103,22 @@ Page({
           res.data.gender = "男"
         }
         const profile = res.data;
-        that.setData({
-          profile: profile
-        })
+        wx.request({
+          url: app.globalData.url + "/users/" + profile.id,
+          method: 'GET',
+          success(res) {
+            // Update local data
+            that.setData({
+              profile: res.data
+            });
+
+            // wx.hideToast();
+          }
+        });
       }
     })
 
-    wx.request({
-      url: app.globalData.url + "/sports",
-      method: 'GET',
-      success(res) {
-        console.log(res);
-        const sports = res.data.sports;
 
-        // Update local data
-        that.setData({
-          sports
-        });
-        console.log(sports);
-
-        // wx.hideToast();
-      }
-    });
 
     wx.getSystemInfo({
       success: function (res) {
@@ -135,6 +130,12 @@ Page({
     });
 
 
+  },
+
+  onCreate: function(e) {
+    wx.redirectTo({
+      url: `/pages/create/create`,
+    })
   },
 
   /**

@@ -57,9 +57,9 @@
               <view class='font-content font-primary btn-text' bindtap='newMessage' data-tag='reply' data-id='{{message.id}}'>Add New</view>
             </view>
             <block wx:for='{{message.replies}}' wx:key='reply.id' wx:for-item='reply'>
-              <view class='message-box'>
+              <view class='message-box border-bottom'>
                 <view class='message-title'>
-                  <view class='font-content font-grey'>{{reply.user.nickname}}</view>
+                  <view class='font-content'>{{reply.user.nickname}}</view>
                   <view class='font-content font-grey'>{{reply.msg_time}}</view>
                 </view>
                 <view class='message-body font-content font-grey'>{{reply.content}}</view>
@@ -71,7 +71,7 @@
     </view>
   </view>
   <view class='bottom-fixed'>
-  <view class="new-message border-bottom fadeInUp {{new_message ? 'show' : 'hidden'}}">
+  <view class="new-message border-bottom {{new_message ? 'show' : 'hidden'}}">
     <form bindsubmit='submitMessage' class='msg-form'>
       <view class='input'>
         <textarea placeholder="New message here" name="content" row='2' class='message-content' />

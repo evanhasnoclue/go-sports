@@ -12,7 +12,7 @@ App({
  
   },
   globalData: {
-    // url:'http://gosports.wogengapp.cn/api/v1',
+    url:'https://gosports.wogengapp.cn/api/v1',
     url:'http://localhost:3000/api/v1',
     sports: [
       {id: 1,
