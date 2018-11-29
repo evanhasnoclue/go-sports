@@ -120,7 +120,7 @@ Page({
   },
   showSport: function (e) {
     wx.navigateTo({
-      url: `../show/show?id=${e.target.dataset.id}`,
+      url: `../show/show?id=${e.currentTarget.dataset.id}`,
     });
   },
 

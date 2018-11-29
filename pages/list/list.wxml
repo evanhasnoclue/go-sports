@@ -1,4 +1,10 @@
 <!--pages/list/list.wxml-->
+
+<view class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.pexels.com/photos/305239/pexels-photo-305239.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350');background-position:center;">
+  <view class="banner-content">
+    <text class='h1'>Join sports join us</text>
+  </view>
+</view>
 <view class="page">
     <view class="page__bd">
         <view class="weui-search-bar">
@@ -56,7 +62,7 @@
   </picker>
   <image style="width: 15px; height: 15px;" src="../../images/filter.png"></image>
   </view>
-  <image bindtap = 'showMap'  style="width: 25px; height: 25px;" src="../../images/map.png"></image>
+  <image bindtap = 'showMap'  style="width: 25px; height: 25px;" src="../../images/地图.png"></image>
 </view>
 
 
@@ -67,7 +73,7 @@
     <block  wx:for="{{ sports }}" wx:for-item="sport"  wx:key="sport.id" class="card">
       <!-- <view class="sport"> -->
         <!-- <image bindtap="showSport" src="{{ sport.photo }}" mode="aspectFill" data-id="{{sport.id}}"></image> -->
-      <view class="sport" bindtap="showSport" data-id="{{sport.id}}" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)),url({{sport.photo}});">
+      <view class="sport" bindtap="showSport" data-id="{{sport.id}}" style="height:180px;background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)),url({{sport.photo}});">
                 <view class='category'>{{sport.category}}</view>
    
         <view class="info">
