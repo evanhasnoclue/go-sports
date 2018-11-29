@@ -9,7 +9,9 @@ Page({
    */
   data: {
     levels: ['junior', 'middle', 'expert'],
-    region: ["Province", "City", "District"]
+    region: ["Province", "City", "District"],
+     array: ['健身', '跑步', '登山', '游泳','篮球','足球','乒乓球'],
+    index: 0,
 
   },
 
