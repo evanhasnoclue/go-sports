@@ -6,8 +6,8 @@
 
 <form bindsubmit="bindSubmit">
   <view class="wrapper text-center">
-    <view class='photo-container' bindtap='takePhoto' style="background-image: url({{imageData}});">
-      Add your banner here
+    <view class='photo-container' bindtap='takePhoto' style="background-image: url({{photo_url}});">
+      Please add a photo
     </view>
     <!-- <view bindtap='takePhoto' class="photo-container">
       Add photo
@@ -20,38 +20,44 @@
     </view>
   </view>
 
-  <view class="user-input">
-    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-      <button type="default">sports</button>
-    </picker>
+<view class="user-input">
+    <view class="text-area-wrap">
+      <textarea value="{{category}}" style="input-size" placeholder="Sport category e.g.running, basketball, yoga" class="input-height" name="baseball" maxlength="-1" auto-height />
+    </view>
   </view>
+
+   <!-- <view class="text-area-wrap">
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <textarea value="{{category}}" style="input-size" placeholder="Category"  name="category" />
+    </picker>
+  </view> -->
 
   <view class="user-input-2">
     <view class="text-area-wrap-2">
-      <textarea value="{{address}}" style="input-size" placeholder="Address" class="input-height" name="address" auto-height />
+      <textarea bindtap='selectLocation' value="{{address}}" style="input-size" placeholder="Address" class="input-height" name="address" auto-height />
     </view>
     <!-- <button bindtap='selectLocation' class = 'btn-small'> -->
-    <image class='map' bindtap='selectLocation' style="width: 25px; height: 25px;" src="../../images/地图2.png"></image>
+    <image class='map' bindtap='selectLocation' style="width: 25px; height: 25px;" src="../../images/map.png"></image>
     <!-- </button> -->
   </view>
 
   <view class="section card-shadow">
     <view class="tui-picker-content">
       <view class="tui-picker-name">Start time</view>
-      <picker mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime1" bindcolumnchange="changeDateTimeColumn1" range="{{dateTimeArray1}}">
+      <picker class='picker-extend' mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime1" bindcolumnchange="changeDateTimeColumn1" range="{{dateTimeArray1}}">
         <view class="tui-picker-detail">
-          <textarea value="{{dateTimeArray1[0][dateTime1[0]]}}-{{dateTimeArray1[1][dateTime1[1]]}}-{{dateTimeArray1[2][dateTime1[2]]}} {{dateTimeArray1[3][dateTime1[3]]}}:{{dateTimeArray1[4][dateTime1[4]]}}" style="input-size" placeholder="start time" name="start_time"
-          />
+        <text class='timepicker' >{{start_time}}</text>
         </view>
       </picker>
     </view>
 
     <view class="tui-picker-content">
       <view class="tui-picker-name">End time</view>
-      <picker mode="multiSelector" value="{{dateTime2}}" bindchange="changeDateTime2" bindcolumnchange="changeDateTimeColumn2" range="{{dateTimeArray2}}">
+      <picker class='picker-extend' mode="multiSelector" value="{{dateTime2}}" bindchange="changeDateTime2" bindcolumnchange="changeDateTimeColumn2" range="{{dateTimeArray2}}">
         <view class="tui-picker-detail">
-          <textarea value="{{dateTimeArray2[0][dateTime2[0]]}}-{{dateTimeArray2[1][dateTime2[1]]}}-{{dateTimeArray2[2][dateTime2[2]]}} {{dateTimeArray2[3][dateTime2[3]]}}:{{dateTimeArray2[4][dateTime2[4]]}}" style="input-size" placeholder="start time" name="end_time"
-          />
+        <text class='timepicker'>{{end_time}}</text>
+          <!-- <textarea class='timepicker' value="{{dateTimeArray2[0][dateTime2[0]]}}-{{dateTimeArray2[1][dateTime2[1]]}}-{{dateTimeArray2[2][dateTime2[2]]}} {{dateTimeArray2[3][dateTime2[3]]}}:{{dateTimeArray2[4][dateTime2[4]]}}" style="input-size" placeholder="start time" name="end_time"
+          /> -->
         </view>
       </picker>
     </view>
@@ -89,7 +95,7 @@
   <view class="weui-cells weui-cells_after-title">
     <view class="weui-cell">
       <view class="weui-cell__bd">
-        <textarea name="description" value="{{description}}" class="weui-textarea" placeholder="请输入文本" style="height: 3.3em" />
+        <textarea name="description" value="{{description}}" class="weui-textarea" placeholder="Please enter your description of this event" style="height: 3.3em" />
         <view class="weui-textarea-counter">0/200</view>
       </view>
     </view>
