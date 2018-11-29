@@ -21,7 +21,7 @@
 
 <view class="user-input">
     <view class="text-area-wrap">
-      <textarea value="{{category}}" style="input-size" placeholder="Sport category e.g.running, basketball, yoga" class="input-height" name="baseball" maxlength="-1" auto-height />
+      <textarea value="{{category}}" style="input-size" placeholder="Sport category e.g.running, basketball, yoga" class="input-height" name="category" maxlength="-1" auto-height />
     </view>
   </view>
 
@@ -103,5 +103,7 @@
 
 
 
-  <button style="margin-bottom:50px" class="btn" formType="submit" loading="{{loading}}">Submit</button>
+  <button style="margin-bottom:5px" class="btn" formType="submit" loading="{{loading}}">Submit</button>
+   <button style="margin-bottom:10" class="btn warning" bindtap='back' loading="{{loading}}">Back</button>
 </form>
+ 
