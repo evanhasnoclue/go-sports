@@ -1,10 +1,9 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
+  <view class='title-box' >
+    <image src='../../images/walk.png' class='avatar' />
+    <view class='title'>Go Sports</view>
+    <view class='title'>Together</view>
+    </view>
     <button wx:if="{{!hasUserInfo && canIUse}}" class='button' open-type="getUserInfo" bindgetuserinfo="getUserInfo"> Wechat login </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
 </view>

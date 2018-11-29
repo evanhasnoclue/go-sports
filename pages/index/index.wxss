@@ -1,9 +1,5 @@
 /**index.wxss**/
-.userinfo {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
+
 
 .userinfo-avatar {
   width: 128rpx;
@@ -19,18 +15,44 @@
 .usermotto {
   margin-top: 200px;
 }
+
 .container{
   width: 100%;
   background-image:url('https://images.unsplash.com/photo-1457470572216-1240fac24b37?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=55deb0321eb4f5c74de90337fc3847da&auto=format&fit=crop&w=800&q=60');
 background-size: cover;
   height: 100vh;
-   display: flex;
-  justify-content: space-around;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-
+  padding-top: 150px;
+  padding-bottom: 50px;
 }
 
 .button{
-  background-color: rgba(255,255,255,0.3);
-   
+  background-color: #ea5455;
+  color: white;
+  width: 80%;
 }
+
+.title-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 40px;
+  color: white;
+  text-align: center;
+}
+
+.avatar {
+  width: 100px;
+  height:100px;
+  border-radius: 50%;
+  background-color: white;
+  text-align: center;
+}
+
