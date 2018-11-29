@@ -12,3 +12,89 @@
   </view>
   <button class="btn" bindtap="onCreate">New Sport</button>
 </view>
+
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-tab">
+      <view class="weui-navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+            <view class="weui-navbar__title">{{item}}</view>
+          </view>
+        </block>
+        <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+      </view>
+      <view class="weui-tab__panel">
+        <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+          <block wx:for="{{sports}}" wx:for-item="sport" wx:key="sport.id">
+            <block wx:for="{{sport.bookings}}" wx:for-item="booking" wx:key="booking.id">
+              <i-swipeout i-class="i-swipeout-demo-item" bind:change="cancelBooking" data-bookingid="{{booking.id}}" id="{{sport.id}}" actions="{{actions2}}">
+                <view slot="content">
+                  <block if wx:if="{{profile.id==booking.user_id}}">
+                    <view bindtap="showSport" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{sport.photo}});" data-voyage="{{sport}}">
+
+                      <view class="card-category">
+                        {{sport.address}}
+                      </view>
+
+                      <view class="card-description">
+
+                        <view class="name">
+                          {{sport.category}}
+                        </view>
+
+                        <view class="tag">
+                          {{voyage.end_time}}
+                        </view>
+
+                      </view>
+                    </view>
+
+                  </block>
+                </view>
+              </i-swipeout>
+            </block>
+          </block>
+        </view>
+        <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+
+
+          <block wx:for="{{sports}}" wx:for-item="sport" wx:key="sport.id">
+            <block if wx:if="{{profile.id==sport.user.id}}">
+              <i-swipeout i-class="i-swipeout-demo-item" bind:change="buttonDelete" id="{{sport.id}}">
+                <view slot="content">
+
+                  <view bindtap="showSport" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{sport.photo}});" data-voyage="{{sport}}">
+
+                    <view class="card-category">
+                      {{sport.address}}
+                    </view>
+
+                    <view class="card-description">
+
+                      <view class="name">
+                        {{sport.title}}
+                      </view>
+
+                      <view class="tag">
+                        {{sport.end_time}}
+                      </view>
+
+                    </view>
+                  </view>
+                </view>
+                <view slot="button" class="i-swipeout-demo-button-group">
+                  <view bindtap="editEvent" class="i-swipeout-demo-button edit" id="{{sport.id}}">编辑</view>
+
+                  <view bindtap="buttonDelete" class="i-swipeout-demo-button delete" id="{{sport.id}}">删除</view>
+                  <!-- <view bindtap="buttonShare" class="i-swipeout-demo-button share" id="{{voyage.id}}" >分享</view> -->
+                </view>
+              </i-swipeout>
+            </block>
+          </block>
+        </view>
+
+      </view>
+    </view>
+  </view>
+</view>
