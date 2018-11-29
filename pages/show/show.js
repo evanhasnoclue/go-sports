@@ -7,7 +7,8 @@ Page({
    */
   data: {
     liked: false,
-    new_message: false
+    new_message: false,
+    replies_show:false
   },
 
   /**
@@ -45,6 +46,12 @@ Page({
     })
   },
 
+  bindHome: function(e) {
+    wx.switchTab({
+      url: '/pages/list/list',
+    })
+  },
+
   bindLike: function(e) {
     let page = this;
     const liked_status = this.data.liked;
@@ -68,7 +75,8 @@ Page({
     })
   },
 
-  onShareAppMessage: function () {
+  onShareAppMessage: function (res) {
+    console.log('share');
     wx.showShareMenu({
       withShareTicket: true
     })
@@ -180,6 +188,13 @@ Page({
         }
       })
     }
+  },
+
+  showMore: function(e) {
+    const more = this.data.replies_show;
+    this.setData({
+      replies_show: !more
+    })
   },
 
   /**
