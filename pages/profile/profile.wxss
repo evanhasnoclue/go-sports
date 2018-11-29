@@ -93,3 +93,7 @@ page,
   border-bottom: 1rpx solid #ea5455;
 }
 
+.btn {
+  background-color: #ea5455;
+  color: white;
+}

@@ -91,6 +91,12 @@ Page({
       });
   },
 
+  newSport: function(e) {
+    wx.redirectTo({
+      url: '/pages/create/create',
+    })
+  },
+
   /**
    * Lifecycle function--Called when page is initially rendered
    */
@@ -158,7 +164,13 @@ Page({
    * Page event handler function--Called when user drop down
    */
   onPullDownRefresh: function () {
-
+    let page = this;
+    wx.startPullDownRefresh({
+      success: (res) => {
+        page.onLoad();
+        wx.stopPullDownRefresh();
+      }
+    })
   },
 
   /**
