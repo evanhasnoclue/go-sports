@@ -30,7 +30,7 @@ Page({
     })
 
     wx.request({
-      url: "http://localhost:3000/api/v1/sports",
+      url: app.globalData.url + "/sports",
       method: 'GET',
       success(res) {
         console.log(res);

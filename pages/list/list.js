@@ -36,7 +36,7 @@ Page({
     const page = this
     console.log(111,page)
     wx.request({
-      url: 'http://localhost:3000/api/v1/sports',
+      url: app.globalData.url + '/sports',
     success(res){
       console.log(122,res)
       page.setData({sports: res.data.sports})
