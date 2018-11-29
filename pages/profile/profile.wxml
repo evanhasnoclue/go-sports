@@ -26,41 +26,35 @@
       </view>
       <view class="weui-tab__panel">
         <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
-          <block wx:for="{{sports}}" wx:for-item="sport" wx:key="sport.id">
-            <block wx:for="{{sport.bookings}}" wx:for-item="booking" wx:key="booking.id">
-              <i-swipeout i-class="i-swipeout-demo-item" bind:change="cancelBooking" data-bookingid="{{booking.id}}" id="{{sport.id}}" actions="{{actions2}}">
+            <block wx:for="{{profile.bookings}}" wx:for-item="booking" wx:key="booking.id">
+              <i-swipeout i-class="i-swipeout-demo-item" bind:change="cancelBooking" data-bookingid="{{booking.id}}" id="{{booking.sport.id}}" actions="{{actions2}}">
                 <view slot="content">
-                  <block if wx:if="{{profile.id==booking.user_id}}">
-                    <view bindtap="showSport" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{sport.photo}});" data-voyage="{{sport}}">
+                    <view bindtap="showSport" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{booking.sport.photo}});" data-voyage="{{booking.sport}}">
 
                       <view class="card-category">
-                        {{sport.address}}
+                        {{booking.sport.address}}
                       </view>
 
                       <view class="card-description">
 
                         <view class="name">
-                          {{sport.category}}
+                          {{booking.sport.category}}
                         </view>
 
                         <view class="tag">
-                          {{voyage.end_time}}
+                          {{booking.sport.end_time}}
                         </view>
 
                       </view>
                     </view>
-
-                  </block>
                 </view>
               </i-swipeout>
             </block>
-          </block>
         </view>
         <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
 
 
-          <block wx:for="{{sports}}" wx:for-item="sport" wx:key="sport.id">
-            <block if wx:if="{{profile.id==sport.user.id}}">
+          <block wx:for="{{profile.sports}}" wx:for-item="sport" wx:key="sport.id">
               <i-swipeout i-class="i-swipeout-demo-item" bind:change="buttonDelete" id="{{sport.id}}">
                 <view slot="content">
 
@@ -90,7 +84,6 @@
                   <!-- <view bindtap="buttonShare" class="i-swipeout-demo-button share" id="{{voyage.id}}" >分享</view> -->
                 </view>
               </i-swipeout>
-            </block>
           </block>
         </view>
 
