@@ -13,7 +13,8 @@ Page({
      array: ['健身', '跑步', '登山', '游泳','篮球','足球','乒乓球'],
     index: 0,
     start_time:"2018-12-30 17:00",
-    end_time:"2018-12-30 17:00"
+    end_time:"2018-12-30 17:00",
+    photo_url: "../../images/upload_photo1.png"
   },
 
   /**
@@ -200,9 +201,9 @@ Page({
       },
       success: (res) => {
         console.log(res)
-        // wx.switchTab({
-        //   url: '/pages/profile/profile',
-        // })
+        wx.switchTab({
+          url: '/pages/profile/profile',
+        })
       }
   })
   },

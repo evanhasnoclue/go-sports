@@ -7,7 +7,6 @@
 <form bindsubmit="bindSubmit">
   <view class="wrapper text-center">
     <view class='photo-container' bindtap='takePhoto' style="background-image: url({{photo_url}});">
-      Please add a photo
     </view>
     <!-- <view bindtap='takePhoto' class="photo-container">
       Add photo

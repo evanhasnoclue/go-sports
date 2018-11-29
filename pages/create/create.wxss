@@ -81,7 +81,9 @@ textarea {
   height:  200px;
   background-color: rgb(201, 201, 199);
   text-align: center;
-  color: #9F9F9C
+  color: #9F9F9C;
+  background-position: center;
+  background-repeat:no-repeat;
 }
 
 /* pages/picker/picker.wxss */
