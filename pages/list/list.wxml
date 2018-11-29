@@ -15,32 +15,51 @@
                     <view class="weui-search-bar__text">搜索</view>
                 </label>
             </view>
-            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">cancel</view>
         </view>
         <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
+          <block  wx:for="{{ sports }}" wx:for-item="sport"  wx:key="sport.id" >
             <navigator url="" class="weui-cell" hover-class="weui-cell_active">
                 <view class="weui-cell__bd">
-                    <view>实时搜索文本</view>
+                    <view>{{sport.title}}</view>
                 </view>
             </navigator>
-            <navigator url="" class="weui-cell" hover-class="weui-cell_active">
-                <view class="weui-cell__bd">
-                    <view>实时搜索文本</view>
-                </view>
-            </navigator>
-            <navigator url="" class="weui-cell" hover-class="weui-cell_active">
-                <view class="weui-cell__bd">
-                    <view>实时搜索文本</view>
-                </view>
-            </navigator>
-            <navigator url="" class="weui-cell" hover-class="weui-cell_active">
-                <view class="weui-cell__bd">
-                    <view>实时搜索文本</view>
-                </view>
-            </navigator>
+            </block>
         </view>
     </view>
 </view>
+
+<view class = "weui-search-bar filters">
+  <view class = 'filter'>
+    <picker mode="date" value="{{date}}" start="2018-09-01" end="2019-09-01" bindchange="bindDateChange" custom-item="{{customDate}}">
+          <view class="picker">
+            {{date}}
+          </view>
+     </picker>
+     <image style="width: 15px; height: 15px;" src="../../images/filter.png"></image>
+  </view>
+  
+  <view class = 'filter'>
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customRegion}}">
+    <view class="picker">
+      {{region[0]}}-{{region[1]}}-{{region[2]}}
+    </view>
+  </picker>
+  <image style="width: 15px; height: 15px;" src="../../images/filter.png"></image>
+  </view>
+
+  <view class = 'filter'>
+  <picker bindchange="bindPickerChange" value="{{level}}" range="{{levels}}">
+    <view class="picker">
+      level
+    </view>
+  </picker>
+  <image style="width: 15px; height: 15px;" src="../../images/filter.png"></image>
+  </view>
+  <image bindtap = 'showMap'  style="width: 25px; height: 25px;" src="../../images/map.png"></image>
+</view>
+
+
 
 
 
@@ -48,7 +67,7 @@
     <block  wx:for="{{ sports }}" wx:for-item="sport"  wx:key="sport.id" class="card">
       <!-- <view class="sport"> -->
         <!-- <image bindtap="showSport" src="{{ sport.photo }}" mode="aspectFill" data-id="{{sport.id}}"></image> -->
-      <view class="sport" bindtap="showSport" data-id="{{sport.id}}" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)),url({{sport.photo}});">
+      <view class="sport" bindtap="showSport" data-id="{{sport.id}}" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)),url({{sport.photo}});">
                 <view class='category'>{{sport.category}}</view>
    
         <view class="info">
