@@ -1,12 +1,12 @@
 <!--pages/show/show.wxml-->
 <view class='container'>
   <view class='banner' style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('{{sport.photo}}')">
-    <view class='font-lighter font-title font-white'>View more photos</view>
+    <view class='font-bold font-title font-white'>{{sport.category}}</view>
   </view>
   <view class='event-info'>
-    <view class='category-row'>
+    <!-- <view class='category-row'>
       <view class='font-content font-bold font-primary tag-border'>{{sport.category}}</view>
-    </view>
+    </view> -->
     <view class='event-intro card-shadow padding-left'>
       <view class='row-title'>
         <view class='font-title font-bold' style="width: 80%;">{{sport.title}}</view>
