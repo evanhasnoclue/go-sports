@@ -124,6 +124,10 @@ textarea {
 .btn {
   background-color: #ea5455;
   color: white;
+  margin: 0;
+}
+.warning{
+  background-color: #f89d26;
 }
 
 .card-shadow {
