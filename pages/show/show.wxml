@@ -15,10 +15,12 @@
       <view class='row-price'>
         <view class='font-title font-bold font-primary'>RMB {{sport.price}}/person</view>
       </view>
-      <view class='row-location'>
-        <view class='font-content font-grey'>{{sport.address}}, {{sport.district}}, {{sport.city}}, {{sport.province}}</view>
+      <view class='row-location' bindtap='showMap'>
+        <image src='../../images/map1.png' class='icon icon-margin' />
+        <view class='font-content font-grey address-width'>{{sport.address}}, {{sport.district}}, {{sport.city}}, {{sport.province}}</view>
       </view>
       <view class='row-time  border-bottom'>
+        <image src='../../images/time.png' class='icon icon-margin' />
         <view class='font-content font-grey'>{{sport.start_time}}-{{sport.end_time}}</view>
       </view>
       <view class='row-users'>
