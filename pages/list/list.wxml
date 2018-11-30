@@ -76,9 +76,12 @@
       <view class="sport" bindtap="showSport" data-id="{{sport.id}}" style="height:180px;background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0)),url({{sport.photo}});">
                 <view class='category'>{{sport.category}}</view>
    
-            <view class="card-avatar" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{sport.user.avatarUrl}});"></view>
+          <view class="card-avatar" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{sport.user.avatarUrl}});"></view>
           <view class="title">{{ sport.title }}</view>
-          <view class="like">{{ sport.like }}likes</view>
+          <view class="like">
+          <image id="heart" src="../../images/heart-primary.png" style="width: 25px; height: 25px; ">{{ sport.like }}</image>
+          <text>{{ sport.like }}</text>
+          </view>
 
           <view class="count">{{ sport.start_time}}</view>
       </view>

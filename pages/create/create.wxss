@@ -155,3 +155,11 @@ textarea {
   height: 100%;
   width: 100%
 }
+.like {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.like text{
+  font-size: 14px
+}

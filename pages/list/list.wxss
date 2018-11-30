@@ -62,12 +62,12 @@ left:10px;
 }
 .sport .count{
   position: absolute;
-  bottom: 0px;
-  left:50px;
+  bottom: 5px;
+  left:10px;
 
-  margin-left: 10rpx;
-  font-size: 30rpx;
-  color: rgba(280, 255, 255, .6);
+  /* margin-left: 10rpx; */
+  font-size: 26rpx;
+  color: white;
   text-shadow: 2rpx 4rpx rgba(0, 0, 0, .12);
 }
 .all{
@@ -163,8 +163,17 @@ left:10px;
 
 .like{
    position: absolute;
-  right: 10px;
+  right: 23px;
   bottom: 10px;
   font-size: 10px;
 
+}
+.like {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.like text{
+  font-size: 14px;
+  font-weight: bold
 }
