@@ -78,6 +78,15 @@ Page({
       })
     },
 
+  showSport: function (e) {
+    const data = e.currentTarget.dataset;
+    console.log(111,data);
+    const sportid = data.id;
+    wx.navigateTo({
+      url: `../show/show?id=${sportid }`,
+    });
+  },
+
   /**
    * Lifecycle function--Called when page is initially rendered
    */

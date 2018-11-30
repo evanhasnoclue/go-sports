@@ -1,5 +1,5 @@
-<map  bindmarkertap="markertap" longitude="{{longitude}}" latitude="{{latitude}}" scale= "{{scale}}" style="width: 100%; height: 60vh;" markers="{{mk}}" show-location include-points="{{mk}}"></map>
-
+<map  bindmarkertap="markertap" longitude="{{longitude}}" latitude="{{latitude}}" scale= "{{scale}}" style="width: 100%; height: 60vh;" markers="{{mk}}" show-location ></map>
+<!-- include-points="{{mk}}" -->
 <scroll-view  style="width: 100%; height: 40vh;" scroll-y>
       <block  wx:for="{{ sports }}" wx:for-item="sport"  wx:key="sport.id" class="card">
       <!-- <view class="sport"> -->
