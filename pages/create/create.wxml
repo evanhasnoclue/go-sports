@@ -7,6 +7,7 @@
 <form bindsubmit="bindSubmit">
   <view class="wrapper text-center">
     <view class='photo-container' bindtap='takePhoto' style="background-image: url({{photo_url}});">
+    <image  style="width: 50px; height: 35px; "src="../../images/upload_photo1.png"></image>
     </view>
     <!-- <view bindtap='takePhoto' class="photo-container">
       Add photo
@@ -104,6 +105,5 @@
 
 
   <button style="margin-bottom:5px" class="btn" formType="submit" loading="{{loading}}">Submit</button>
-   <button style="margin-bottom:10" class="btn warning" bindtap='back' loading="{{loading}}">Back</button>
 </form>
- 
+    <button style="margin-bottom:10" class="btn warning" bindtap='back' loading="{{loading}}">Back</button>
