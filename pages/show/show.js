@@ -244,5 +244,10 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  showMap: function () {
+    wx.navigateTo({
+      url: '/pages/map/map'
+    });
+  },
 })
