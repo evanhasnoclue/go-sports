@@ -63,6 +63,7 @@ page,
 
 .i-swipeout-demo-button-group{
   display:flex;
+  padding-top:25px;
 }
 
 .i-swipeout-demo-button{
@@ -70,10 +71,9 @@ page,
   align-items: center;
   width: 100px;
   height: 100px;
-  display:none;
   text-align: center;
   justify-content: center;
-
+  display:flex; 
 
 }
 

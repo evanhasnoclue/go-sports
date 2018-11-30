@@ -1,1 +1,5 @@
-{}
+{
+  "usingComponents": {
+    "i-swipeout": "../../dist/swipeout/index"
+  }
+}
