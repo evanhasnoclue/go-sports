@@ -53,6 +53,7 @@
         </view>
         <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
 
+toto
 
           <block wx:for="{{profile.sports}}" wx:for-item="sport" wx:key="sport.id">
               <i-swipeout i-class="i-swipeout-demo-item" bind:change="buttonDelete" id="{{sport.id}}">
@@ -78,7 +79,7 @@
                   </view>
                 </view>
                 <view slot="button" class="i-swipeout-demo-button-group">
-                  <view bindtap="editEvent" class="i-swipeout-demo-button edit" id="{{sport.id}}">编辑</view>
+                 <view bindtap="editEvent" class="i-swipeout-demo-button edit" id="{{sport.id}}">编辑</view>
 
                   <view bindtap="buttonDelete" class="i-swipeout-demo-button delete" id="{{sport.id}}">删除</view>
                   <!-- <view bindtap="buttonShare" class="i-swipeout-demo-button share" id="{{voyage.id}}" >分享</view> -->
