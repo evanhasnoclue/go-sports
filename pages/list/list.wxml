@@ -42,7 +42,7 @@
             {{date}}
           </view>
      </picker>
-     <image style="width: 10px; height: 10px;" src="../../images/下拉1.png"></image>
+     <image style="width: 10px; height: 10px;" src="../../images/pulldown.png"></image>
   </view>
   
   <view class = 'filter'>
@@ -51,7 +51,7 @@
       {{region[0]}}-{{region[1]}}-{{region[2]}}
     </view>
   </picker>
-  <image style="width: 10px; height: 10px;" src="../../images/下拉1.png"></image>
+  <image style="width: 10px; height: 10px;" src="../../images/pulldown.png"></image>
   </view>
 
   <view class = 'filter'>
@@ -60,9 +60,9 @@
       level
     </view>
   </picker>
-  <image style="width: 10px; height: 10px;" src="../../images/下拉1.png"></image>
+  <image style="width: 10px; height: 10px;" src="../../images/pulldown.png"></image>
   </view>
-  <image bindtap = 'showMap'  style="width: 13px; height: 13px;" src="../../images/地图.png"></image>
+  <image bindtap = 'showMap'  style="width: 13px; height: 13px;" src="../../images/map1.png"></image>
 </view>
 
 
