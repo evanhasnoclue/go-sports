@@ -80,7 +80,8 @@ Page({
       url: app.globalData.url + '/sports',
     success(res){
       console.log(122,res)
-      page.setData({sports: res.data.sports.reverse()})
+      page.setData({sports: res.data.sports.reverse()});
+      wx.stopPullDownRefresh()
     }
     })
   },
@@ -164,13 +165,7 @@ Page({
    * Page event handler function--Called when user drop down
    */
   onPullDownRefresh: function () {
-    let page = this;
-    wx.startPullDownRefresh({
-      success: (res) => {
-        page.onLoad();
-        wx.stopPullDownRefresh();
-      }
-    })
+    this.onLoad();
   },
 
   /**
