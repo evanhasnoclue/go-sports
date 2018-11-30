@@ -83,7 +83,12 @@ textarea {
   text-align: center;
   color: #9F9F9C;
   background-position: center;
+  background-size: cover;
   background-repeat:no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: space-around
+
 }
 
 /* pages/picker/picker.wxss */
