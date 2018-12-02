@@ -54,10 +54,19 @@
   <image style="width: 10px; height: 10px;" src="../../images/pulldown.png"></image>
   </view>
 
+    <view class = 'filter'>
+  <picker bindchange="bindPickerChange1" value="{{category}}" range="{{categories}}">
+    <view class="picker">
+      Category
+    </view>
+  </picker>
+  <image style="width: 10px; height: 10px;" src="../../images/pulldown.png"></image>
+  </view>
+
   <view class = 'filter'>
   <picker bindchange="bindPickerChange" value="{{level}}" range="{{levels}}">
     <view class="picker">
-      level
+      Level
     </view>
   </picker>
   <image style="width: 10px; height: 10px;" src="../../images/pulldown.png"></image>
