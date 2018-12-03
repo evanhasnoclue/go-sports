@@ -13,7 +13,7 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    const user_id = 5;
+    const user_id = options.id;
     let page = this;
     wx.request({
       url: `${app.globalData.url}/users/${user_id}`,
@@ -21,22 +21,32 @@ Page({
       success: (res) => {
         let messages = [];
         res.data.sports.forEach((sport) => {
-          sport.messages.forEach((message) => {
-            messages.push(message);
-          })
+          messages = messages.concat(sport.messages);
         });
         res.data.messages.forEach((message) => {
-          message.replies.forEach((reply) => {
-            messages.push(reply);
-          })
+          messages = messages.concat(message.replies);
         });
         page.setData({
           user_id: user_id,
           user: res.data,
-          messages: messages
+          messages: messages,
+          unread: messages.filter(message => message.read_status === false)
         })
       }
     })
+  },
+
+  readMessage: function(e) {
+    console.log(e);
+    if (e.currentTarget.dataset.msg.sport_id) {
+      wx.redirectTo({
+        url: `/pages/show/show?id=${e.currentTarget.dataset.msg.sport_id}`,
+      })
+    } else if (e.currentTarget.dataset.message_id) {
+      wx.redirectTo({
+        url: `/pages/show/show?id=${e.currentTarget.dataset.message.sport_id}`,
+      })
+    }
   },
 
   /**

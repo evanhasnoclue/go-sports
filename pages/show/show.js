@@ -1,5 +1,6 @@
 // pages/show/show.js
 let app = getApp();
+
 Page({
 
   /**

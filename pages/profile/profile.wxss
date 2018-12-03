@@ -97,3 +97,20 @@ page,
   background-color: #ea5455;
   color: white;
 }
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 120px;
+}
+
+.icon1 {
+  width: 40px;
+  height: 40px;
+}
+
+.icon2 {
+  width:30px;
+  height:30px;
+}
