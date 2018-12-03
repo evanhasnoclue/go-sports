@@ -15,31 +15,6 @@ Page({
     })
   },
   onLoad: function () {
-    const host = 'http://localhost:3000/'
-    console.log('processing to login')
-    const page = this;
-    wx.login({
-      success: (res) => {
-        console.log(res)
-        wx.request({
-          url: app.globalData.url + "/login",
-          method: 'post',
-          data: {
-            code: res.code
-          },
-          success: (res) => {
-            // console.log(res)
-            // app.globalData.userId=res.data.userId
-            // console.log(app.globalData.userId)
-            let user_id = res.data.userId
-            wx.setStorage({
-              key: 'open_id',
-              data: user_id
-            })
-          }
-        })
-      }
-    })
   },
   getUserInfo: function(e) {
     console.log(e)

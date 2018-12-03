@@ -127,7 +127,7 @@
     </view>
     <view class='buttons'>
       <block wx:if='{{current_user_id!=sport.user.id}}'>
-        <button wx:if='{{!booking}}' class='btn btn-small' bindtap='bookSports'>Join</button>
+        <button wx:if='{{!booking}}' class='btn btn-small' bindtap='bookSports' open-type="getUserInfo" >Join</button>
         <button wx:if='{{booking}}' class='btn btn-small' bindtap='cancelBooking'>Cancel</button>
       </block>
       <button wx:if='{{current_user_id===sport.user.id}}' class='btn btn-small' bindtap='deleteSports'>Delete</button>
