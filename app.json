@@ -6,6 +6,7 @@
     "pages/profile/profile",
     "pages/create/create",
     "pages/map/map",
+    "pages/notes/notes",
     "pages/logs/logs"
   ],
   "window": {
