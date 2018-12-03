@@ -53,7 +53,6 @@
         </view>
         <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
 
-toto
 
           <block wx:for="{{profile.sports}}" wx:for-item="sport" wx:key="sport.id">
               <i-swipeout i-class="i-swipeout-demo-item" bind:change="buttonDelete" id="{{sport.id}}">
@@ -87,6 +86,11 @@ toto
               </i-swipeout>
           </block>
         </view>
+          <view class="weui-tab__content" hidden="{{activeIndex != 2}}"  >
+          <view class="container">
+    <canvas canvas-id="radarCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
+</view>
+          </view>
 
       </view>
     </view>
