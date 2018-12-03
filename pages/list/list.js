@@ -95,11 +95,11 @@ Page({
       });
   },
 
-  newSport: function(e) {
-    wx.redirectTo({
-      url: '/pages/create/create',
-    })
-  },
+  // newSport: function(e) {
+  //   wx.redirectTo({
+  //     url: '/pages/create/create',
+  //   })
+  // },
 
   /**
    * Lifecycle function--Called when page is initially rendered

@@ -138,6 +138,12 @@ Page({
 
 
   },
+  
+onCreate: function(e) {
+wx.navigateTo({ 
+  url: `/pages/create/create`,
+})
+},
   createChart: function(sportsIndicator) {
     var windowWidth = 320;
     try {
@@ -146,7 +152,6 @@ Page({
     } catch (e) {
       console.error('getSystemInfoSync failed!');
     }
-
     radarChart = new wxCharts({
       canvasId: 'radarCanvas',
       type: 'radar',
