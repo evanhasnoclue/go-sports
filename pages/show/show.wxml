@@ -3,6 +3,12 @@
   <view class='banner' style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('{{sport.photo}}')">
     <view class='font-bold font-title font-white'>{{sport.category}}</view>
   </view>
+  <view class='shopping'>
+  
+   <button  wx:if="{{show}}" class='shop-btn' bindtap='goDecat'>Get sports equipment!</button>
+  <image class='icon' bindtap='showBtn' style="width: 42px; height: 42px;" src="../../images/shopping_cart.png"></image>
+   
+  </view>
   <view class='event-info'>
     <!-- <view class='category-row'>
       <view class='font-content font-bold font-primary tag-border'>{{sport.category}}</view>
