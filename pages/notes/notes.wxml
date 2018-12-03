@@ -1,0 +1,12 @@
+<!--pages/notes/notes.wxml-->
+<view class='container'>
+<view class='header'>
+</view>
+<view class='notes'>
+<block wx:for='{{messages}}' wx:for-item='message' wx:key='message.id'>
+<view class='msg-card'>
+<view class='msg-title'></view>
+</view>
+</block>
+</view>
+</view>
