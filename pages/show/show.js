@@ -8,7 +8,8 @@ Page({
   data: {
     liked: false,
     new_message: false,
-    replies_show:false
+    replies_show:false,
+    show: false
   },
 
   /**
@@ -294,4 +295,15 @@ Page({
       url: '/pages/map/map'
     });
   },
+  goDecat: function(){
+    wx.navigateTo({
+      url: '/pages/ad/ad'
+    });
+  },
+  showBtn: function () {
+    let status = !this.data.show
+    this.setData({
+      show: status
+    })
+  }
 })

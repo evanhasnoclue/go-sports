@@ -57,7 +57,7 @@
     <view class = 'filter'>
   <picker bindchange="bindPickerChange1" value="{{category}}" range="{{categories}}">
     <view class="picker">
-      Category
+      Cate.
     </view>
   </picker>
   <image style="width: 10px; height: 10px;" src="../../images/pulldown.png"></image>
@@ -66,7 +66,7 @@
   <view class = 'filter'>
   <picker bindchange="bindPickerChange" value="{{level}}" range="{{levels}}">
     <view class="picker">
-      Level
+      Lv.
     </view>
   </picker>
   <image style="width: 10px; height: 10px;" src="../../images/pulldown.png"></image>
