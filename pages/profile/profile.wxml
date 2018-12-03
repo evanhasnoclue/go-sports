@@ -32,7 +32,7 @@
                     <view bindtap="showSport" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{booking.sport.photo}});" data-voyage="{{booking.sport}}">
 
                       <view class="card-category">
-                        {{booking.sport.address}}
+                        {{booking.sport.level}}
                       </view>
 
                       <view class="card-description">
@@ -61,7 +61,7 @@
                   <view bindtap="showSport" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{sport.photo}});" data-voyage="{{sport}}">
 
                     <view class="card-category">
-                      {{sport.address}}
+                      {{sport.level}}
                     </view>
 
                     <view class="card-description">

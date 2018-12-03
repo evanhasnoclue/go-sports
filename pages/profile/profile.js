@@ -13,7 +13,6 @@ Page({
    */
   data: {
 
-
     visible2: false,
     toggle: false,
     toggle2: false,
@@ -98,6 +97,7 @@ Page({
   /**
    * Lifecycle function--Called when page load
    */
+
   onLoad: function (options) {
     var that = this;
     wx.getStorage({
@@ -118,12 +118,24 @@ Page({
             that.setData({
               profile: res.data
             });
+        console.log(that.data )
+        let result = 0
+        for (let i=0;i<res.data.sports.length; i++){
+          result = result + res.data.sports[i].like
+        }       
+        let sportsIndicator = new Array(res.data.bookings.length*10,res.data.fav_sports.length*10,res.data.replies.length*10,res.data.sports.length*10,result*10)
+        that.setData({
+          sportsIndicator: sportsIndicator
+        })
+
+            
 
             // wx.hideToast();
           }
         });
       }
     })
+
 
 
 
@@ -138,6 +150,7 @@ Page({
 
 
   },
+  
   createChart: function(sportsIndicator) {
     var windowWidth = 320;
     try {
@@ -150,9 +163,15 @@ Page({
     radarChart = new wxCharts({
       canvasId: 'radarCanvas',
       type: 'radar',
-      categories: ['1', '2', '3', '4', '5', '6'],
+      categories: ['P', 'F', 'R', 'D', 'L'],
+      // P:participation,
+      // F:favorite
+      // R:replies
+      // S:sports
+      // L:like
+
       series: [{
-        name: '运动指数',
+        name: 'SPORTS INDICATORS',
         // data: [90, 110, 125, 95, 87, 122]
         data: sportsIndicator
       }],
@@ -186,8 +205,9 @@ Page({
       activeIndex: e.currentTarget.id
     });
     if (e.currentTarget.id=="2"){
-      let sportsIndicator = [56, 30, 30, 40, 87, 122]
-      this.createChart(sportsIndicator)
+      console.log(this.data.sportsIndicator)
+      // let sportsIndicator = [56, 30, 30, 40, 87, 122]
+      this.createChart(this.data.sportsIndicator)
     }
   },
 
