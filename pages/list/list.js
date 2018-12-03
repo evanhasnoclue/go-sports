@@ -7,16 +7,19 @@ Page({
     inputShowed: false,
     inputVal: "",
     date: "Date",
-    region: ["Province","City","District"],
-    levels: ["all", "junior", "middle","expert"],
+    region: ["Prov.","City","Dist."],
+    levels: ["All", "junior", "middle","expert"],
+    categories: ['All', 'running', 'fitness', 'badminton', 'basketball', 'football', 'hiking', 'swimming', 'tennis'],
     customRegion: "All",
     customDate: "All",
   },
   setQuery: function () {
     const page = this;
     let title = page.data.inputVal || ''; 
+    let category = page.data.category || '';
+    if (page.data.category == "All") { category = '' };
     let level = page.data.levels[page.data.level] || '';
-    if (page.data.level == "All") { level = "" };
+    if (page.data.levels[page.data.level] == "All") { level = "" };
     let start_time = page.data.date || ''; 
     if (page.data.date == "Date" || page.data.date == "ALL" ) {start_time = ""};
     let province = page.data.province || ''; 
@@ -25,7 +28,7 @@ Page({
     if (page.data.city == "All") { city = "" };
     let district = page.data.district || ''; 
     if (page.data.district == "All") { district = "" };
-    let query = `query[title]=${title}&query[level]=${level}&query[start_time]=${start_time}&query[province]=${province}&query[city]=${city}&query[district]=${district}`;
+    let query = `query[title]=${title}&query[category]=${category}&query[level]=${level}&query[start_time]=${start_time}&query[province]=${province}&query[city]=${city}&query[district]=${district}`;
     page.setData({query})
   },
 
@@ -37,7 +40,7 @@ Page({
       // url: 'http://localhost:3000/api/v1/query?' + page.data.query,
       success(res) {
         console.log(123, res)
-        page.setData({ sports: res.data.sports })
+        page.setData({ sports: res.data.sports.reverse() })
       }
     })
   },
@@ -92,11 +95,11 @@ Page({
       });
   },
 
-  newSport: function(e) {
-    wx.redirectTo({
-      url: '/pages/create/create',
-    })
-  },
+  // newSport: function(e) {
+  //   wx.redirectTo({
+  //     url: '/pages/create/create',
+  //   })
+  // },
 
   /**
    * Lifecycle function--Called when page is initially rendered
@@ -156,6 +159,15 @@ Page({
     console.log('picker发送选择改变，携带值为', e.detail.value)
     page.setData({
       level: e.detail.value
+    });
+    page.getQuery()
+
+  },
+  bindPickerChange1: function (e) {
+    let page = this;
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    page.setData({
+      category: page.data.categories[e.detail.value]
     });
     page.getQuery()
 

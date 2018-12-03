@@ -7,7 +7,10 @@
 <form bindsubmit="bindSubmit">
   <view class="wrapper text-center">
     <view class='photo-container' bindtap='takePhoto' style="background-image: url({{photo_url}});">
-    <image  style="width: 50px; height: 35px; "src="../../images/upload_photo1.png"></image>
+      <view wx:if="{{photo_url==nil}}" class='flex-column'>
+      <image  style="width: 50px; height: 35px; "src="../../images/upload_photo1.png"></image>
+      <text>A nice photo always helps with attracting more attendees...</text>
+      </view>
     </view>
     <!-- <view bindtap='takePhoto' class="photo-container">
       Add photo
@@ -20,10 +23,13 @@
     </view>
   </view>
 
-<view class="user-input">
-    <view class="text-area-wrap">
-      <textarea value="{{category}}" style="input-size" placeholder="Sport category e.g.running, basketball, yoga" class="input-height" name="category" maxlength="-1" auto-height />
+<view class="user-input-2">
+    <view class="text-area-wrap-2">
+      <textarea value="{{category}}" style="input-size" placeholder="Please choose category from list" class="input-height" name="category" maxlength="-1" auto-height />
     </view>
+    <picker bindchange="bindPickerChange1" range="{{categories}}">
+        <image class='icon' bindtap='bindPickerChange1' style="width: 25px; height: 25px;" src="../../images/pulldown.png"></image>
+    </picker>
   </view>
 
    <!-- <view class="text-area-wrap">
@@ -34,10 +40,10 @@
 
   <view class="user-input-2">
     <view class="text-area-wrap-2">
-      <textarea bindtap='selectLocation' value="{{address}}" style="input-size" placeholder="Address" class="input-height" name="address" auto-height />
+      <textarea bindtap='selectLocation' value="{{address}}" style="input-size" placeholder="Please choose address from map" class="input-height" name="address" auto-height />
     </view>
     <!-- <button bindtap='selectLocation' class = 'btn-small'> -->
-    <image class='map' bindtap='selectLocation' style="width: 25px; height: 25px;" src="../../images/map1.png"></image>
+    <image class='icon' bindtap='selectLocation' style="width: 25px; height: 25px;" src="../../images/map1.png"></image>
     <!-- </button> -->
   </view>
 

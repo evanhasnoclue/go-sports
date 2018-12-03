@@ -17,7 +17,7 @@
 /* form style */
 .user-input {
   width: 100%;
-  margin-bottom: 35rpx;
+  /* margin-bottom: 35rpx; */
 }
 .input-height {
   height: 10em;
@@ -90,6 +90,12 @@ textarea {
   justify-content: space-around
 
 }
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px
+}
 
 /* pages/picker/picker.wxss */
 .tui-picker-content{
@@ -142,9 +148,16 @@ textarea {
   margin: 15px 10px;
 }
 
+
 .map{
+  width: 5px;
+  height: 5px;
+}
+
+.icon{
   width: 15px;
   height: 20px;
+  margin-right: 5px;
 }
 .timepicker{
   font-size: 16px;
