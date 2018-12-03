@@ -105,7 +105,8 @@ left:10px;
   font-size: 15px;
   padding:5px;
   border-style: light;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+  font-weight: bold;
+  opacity: 0.75
 }
 .filters{
  display: flex;
@@ -136,8 +137,8 @@ left:10px;
   align-items: center;
   justify-content: center;
 }
-.banner h1 {
-  font-size: 50px;
+.banner .h1 {
+  font-size: 32px;
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
   
@@ -167,4 +168,8 @@ left:10px;
   bottom: 10px;
   font-size: 10px;
 
+}
+
+.weui-search-bar__cancel-btn{
+  color: #ea5455
 }

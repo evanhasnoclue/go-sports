@@ -138,8 +138,8 @@ textarea {
 }
 
 .map{
-  width: 15px;
-  height: 20px;
+  width: 5px;
+  height: 5px;
 }
 .timepicker{
   font-size: 16px;

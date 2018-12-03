@@ -36,7 +36,7 @@
       <textarea bindtap='selectLocation' value="{{address}}" style="input-size" placeholder="Address" class="input-height" name="address" auto-height />
     </view>
     <!-- <button bindtap='selectLocation' class = 'btn-small'> -->
-    <image class='map' bindtap='selectLocation' style="width: 25px; height: 25px;" src="../../images/map.png"></image>
+    <image class='map' bindtap='selectLocation' style="width: 20px; height: 20px;" src="../../images/地图.png"></image>
     <!-- </button> -->
   </view>
 
@@ -104,6 +104,6 @@
 
 
   <button style="margin-bottom:5px" class="btn" formType="submit" loading="{{loading}}">Submit</button>
-   <button style="margin-bottom:10" class="btn warning" bindtap='back' loading="{{loading}}">Back</button>
+
 </form>
  
