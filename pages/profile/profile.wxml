@@ -10,7 +10,11 @@
     <view style="font-size: 13px;color: #888888;">{{profile.province}}{{profile.gender}}</view>
     <input bindblur='saveTel' value="18612345678"></input>
   </view>
-  <button class="btn" bindtap="onCreate">New Sport</button>
+  <view class='actions'>
+  <image src='../../images/message.png' class='icon1' bindtap='showMessages' />
+  <image src='../../images/add.png' class='icon2' bindtap='onCreate' />
+  <image src='../../images/share-primary.png' class='icon2' />
+  </view>
 </view>
 
 <view class="page">

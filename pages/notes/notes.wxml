@@ -1,12 +1,25 @@
 <!--pages/notes/notes.wxml-->
 <view class='container'>
-<view class='header'>
-</view>
-<view class='notes'>
-<block wx:for='{{messages}}' wx:for-item='message' wx:key='message.id'>
-<view class='msg-card'>
-<view class='msg-title'></view>
-</view>
-</block>
-</view>
+  <view class='header'>
+    <view class='title-box'>
+      <view class='title font-title font-bold'>Your Messages</view>
+      <view class='unread-number font-title font-bold border-round color-primary'>{{unread.length}}</view>
+    </view>
+    <view class='read-all'>
+    <view class='font-title font-grey'>Read all</view>
+    <image src='../../images/check.png' class='icon' />
+    </view>
+  </view>
+  <view class='notes border-top'>
+    <block wx:for='{{messages}}' wx:for-item='message' wx:key='message.id'>
+      <view class="msg-card {{message.read_status ? 'read' : 'unread'}}" bindtap='readMessage' data-msg='{{message}}'>
+        <view class='msg-title'>
+          <view class="{{message.read_status ? 'show' : 'unread-dot'}} border-round color-primary"> </view>
+          <view wx:if='{{message.sport_id}}' class='msg-title font-content'>New message </view>
+          <view wx:if='{{message.message_id}}' class='msg-title font-content'>New reply</view>
+        </view>
+        <view class='msg-body line-limited font-content font-grey'>{{message.content}}</view>
+      </view>
+    </block>
+  </view>
 </view>

@@ -192,6 +192,13 @@ wx.navigateTo({
     });
   },
 
+  showMessages: function(e) {
+    const user_id = this.data.profile.id;
+    wx.redirectTo({
+      url: `/pages/notes/notes?id=${user_id}`,
+    })
+  },
+
   onReady: function(e) {
 
   },
