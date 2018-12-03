@@ -93,6 +93,24 @@
   justify-content: space-between;
 }
 
+.row-location {
+  display: flex;
+  align-items: center;
+}
+
+.row-time {
+  display: flex;
+  align-items: center;
+}
+
+.icon-margin {
+  margin: 10px 0;
+}
+
+.address-width {
+  width: 90%;
+}
+
 .row-users {
   margin-top: 0;
   height: 50px;

@@ -17,7 +17,7 @@
 /* form style */
 .user-input {
   width: 100%;
-  margin-bottom: 35rpx;
+  /* margin-bottom: 35rpx; */
 }
 .input-height {
   height: 10em;
@@ -83,7 +83,18 @@ textarea {
   text-align: center;
   color: #9F9F9C;
   background-position: center;
+  background-size: cover;
   background-repeat:no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: space-around
+
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px
 }
 
 /* pages/picker/picker.wxss */
@@ -137,9 +148,16 @@ textarea {
   margin: 15px 10px;
 }
 
+
 .map{
   width: 5px;
   height: 5px;
+}
+
+.icon{
+  width: 15px;
+  height: 20px;
+  margin-right: 5px;
 }
 .timepicker{
   font-size: 16px;
@@ -149,4 +167,12 @@ textarea {
 .picker-extend {
   height: 100%;
   width: 100%
+}
+.like {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.like text{
+  font-size: 14px
 }

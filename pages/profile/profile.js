@@ -4,6 +4,8 @@ var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
 const {
   $Message
 } = require('../../dist/base/index');
+var wxCharts = require('../../utils/wxcharts.js');
+var radarChart = null;
 Page({
 
   /**
@@ -51,6 +53,11 @@ Page({
     sliderLeft: 0,
 
   },
+  touchHandler: function (e) {
+    console.log(radarChart.getCurrentDataIndex(e));
+
+  },
+
   handleCancel2() {
     this.setData({
       visible2: false,
@@ -131,17 +138,42 @@ Page({
 
 
   },
-
-  onCreate: function(e) {
-    wx.navigateTo({
-      url: `/pages/create/create`,
-    })
+  
+onCreate: function(e) {
+wx.navigateTo({ 
+  url: `/pages/create/create`,
+})
+},
+  createChart: function(sportsIndicator) {
+    var windowWidth = 320;
+    try {
+      var res = wx.getSystemInfoSync();
+      windowWidth = res.windowWidth;
+    } catch (e) {
+      console.error('getSystemInfoSync failed!');
+    }
+    radarChart = new wxCharts({
+      canvasId: 'radarCanvas',
+      type: 'radar',
+      categories: ['1', '2', '3', '4', '5', '6'],
+      series: [{
+        name: '运动指数',
+        // data: [90, 110, 125, 95, 87, 122]
+        data: sportsIndicator
+      }],
+      // width: windowWidth,
+      width: 300,
+      // height: 200,
+      height: 300,
+      extra: {
+        radar: {
+          max: 150
+        }
+      }
+    });
   },
 
-  /**
-   * Lifecycle function--Called when page is initially rendered
-   */
-  onReady: function () {
+  onReady: function(e) {
 
   },
 
@@ -153,10 +185,15 @@ Page({
   },
   
   tabClick: function (e) {
+    console.log("tab clicked")
     this.setData({
       sliderOffset: e.currentTarget.offsetLeft,
       activeIndex: e.currentTarget.id
     });
+    if (e.currentTarget.id=="2"){
+      let sportsIndicator = [56, 30, 30, 40, 87, 122]
+      this.createChart(sportsIndicator)
+    }
   },
 
   /**

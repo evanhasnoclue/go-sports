@@ -17,7 +17,10 @@ Page({
     let sportmk = [];
     let pages = getCurrentPages();
     let list = pages[(pages.length-2)];
-    that.setData({sports: list.data.sports});
+    let sports = [];
+    if (list.data.sports) { sports = list.data.sports } else { sports.push(list.data.sport)};
+    that.setData({sports: sports});
+    // that.setData({sports: list.data.sports});
     console.log(1,that.data);
     wx.getLocation({
       type: 'GCJ-02', // **1
@@ -43,7 +46,7 @@ Page({
           latitude: latitude,
           longitude: longitude, speed: speed,
           accuracy: accuracy,
-          scale: 12,
+          scale: 14,
           mk: markers,
           sportmk: sportmk})
   }
@@ -77,6 +80,15 @@ Page({
         }
       })
     },
+
+  showSport: function (e) {
+    const data = e.currentTarget.dataset;
+    console.log(111,data);
+    const sportid = data.id;
+    wx.navigateTo({
+      url: `../show/show?id=${sportid }`,
+    });
+  },
 
   /**
    * Lifecycle function--Called when page is initially rendered

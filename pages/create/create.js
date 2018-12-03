@@ -10,11 +10,11 @@ Page({
   data: {
     levels: ['junior', 'middle', 'expert'],
     region: ["Province", "City", "District"],
-     array: ['健身', '跑步', '登山', '游泳','篮球','足球','乒乓球'],
+    categories: ['All', 'running', 'fitness', 'badminton', 'basketball', 'football', 'hiking', 'swimming', 'tennis'],
     index: 0,
     start_time:"2018-12-30 17:00",
-    end_time:"2018-12-30 17:00",
-    photo_url: "http://lc-sJYm7PNe.cn-n1.lcfile.com/20df49b6ae9de0362345"
+    end_time:"2018-12-30 17:00"
+    // photo_url: "http://lc-sJYm7PNe.cn-n1.lcfile.com/20df49b6ae9de0362345"
   },
 
   /**
@@ -172,6 +172,14 @@ Page({
     this.setData({
       region: e.detail.value
     });
+  },
+  bindPickerChange1: function (e) {
+    let page = this;
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    page.setData({
+      category: page.data.categories[e.detail.value]
+    });
+
   },
 
   bindSubmit: function(e){
