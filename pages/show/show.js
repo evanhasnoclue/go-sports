@@ -84,17 +84,61 @@ Page({
 
   bookSports: function(e) {
     let page = this;
-    wx.request({
-      url: `${app.globalData.url}/sports/${page.data.sport.id}/bookings`,
-      method: 'POST',
-      data: {
-        user_id: page.data.current_user_id
-      },
-      success: (res) => {
+    wx.getStorage({
+      key: 'current_user',
+      success: function (user) {
+        console.log(111, "success")
         page.setData({
-          booking: res.data
-        });
-        page.onLoad({id: page.data.sport.id})
+          current_user_id: user.data.id
+        })
+        wx.request({
+          url: `${app.globalData.url}/sports/${page.data.sport.id}/bookings`,
+          method: 'POST',
+          data: {
+            user_id: page.data.current_user_id
+          },
+          success: (res) => {
+            page.setData({
+              booking: res.data
+            });
+            page.onLoad({ id: page.data.sport.id })
+          }
+        })
+      },
+      fail: function (e) {
+        console.log("fail")
+        let user_data = {}
+        wx.getStorage({
+          key: 'open_id',
+          success: (res) => {
+            wx.getUserInfo({
+              success: function (res) {
+                const userInfo = res.userInfo
+                  user_data = {
+                  nickname: userInfo.nickName,
+                  avatarUrl: userInfo.avatarUrl,
+                  gender: userInfo.gender,
+                  city: userInfo.city,
+                  province: userInfo.province,
+                  country: userInfo.country,
+                  open_id: res.data
+                };
+                wx.request({
+                  url: app.globalData.url + '/users',
+                  method: 'POST',
+                  data: { user_data: user_data },
+                  success: (res) => {
+                    wx.setStorage({
+                      key: 'current_user',
+                      data: res.data
+                    });
+                    page.bookSports()
+                  }
+                })
+              }
+            })
+          }
+        })
       }
     })
   },

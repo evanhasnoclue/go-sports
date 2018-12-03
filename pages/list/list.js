@@ -87,6 +87,16 @@ Page({
       wx.stopPullDownRefresh()
     }
     })
+
+    wx.getStorage({
+      key: 'current_user',
+      success: function (user) {},
+      fail: function() {
+        wx.redirectTo({
+          url: '/pages/index/index'
+        })
+      }
+    })
   },
 
   showMap: function() {
