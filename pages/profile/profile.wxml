@@ -35,6 +35,8 @@
                 <view slot="content">
                     <view bindtap="showSport" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{booking.sport.photo}});" data-voyage="{{booking.sport}}">
 
+                    <view class='join-badge'>{{booking.sport.bookings.length}}/{{booking.sport.capacity}}</view>
+
                       <view class="card-category">
                         {{booking.sport.level}}
                       </view>
@@ -63,6 +65,8 @@
                 <view slot="content">
 
                   <view bindtap="showSport" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{sport.photo}});" data-voyage="{{sport}}">
+
+                  <view class='join-badge'>{{sport.bookings.length}}/{{sport.capacity}}</view>
 
                     <view class="card-category">
                       {{sport.level}}
