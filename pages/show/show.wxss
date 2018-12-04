@@ -123,6 +123,9 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  width: 100% - 50px;
+  overflow:hidden;
+  white-space:nowrap;
 }
 
 .row-description {

@@ -113,7 +113,13 @@ Page({
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
-
+    let messages = this.data.messages;
+    messages_sorted = messages.sort((a,b) => {
+      return a.creat_time - b.creat_time;
+    });
+    this.setData({
+      messages: messages_sorted
+    })
   },
 
   /**

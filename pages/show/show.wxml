@@ -30,11 +30,11 @@
         <view class='capacity'>
           <view class='font-content'>{{sport.bookings.length}}/{{sport.capacity}}</view>
         </view>
-        <view class='users'>
+        <scroll-view class='users' scroll-x>
           <block wx:for='{{sport.bookings}}' wx:key="booking.id" wx:for-item="booking">
             <image src='{{booking.user.avatarUrl}}' class='avatar avatar-small' />
           </block>
-        </view>
+        </scroll-view>
       </view>
     </view>
     <view class='row-description card-shadow padding-left'>
