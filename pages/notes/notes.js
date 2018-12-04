@@ -26,10 +26,16 @@ Page({
         res.data.messages.forEach((message) => {
           messages = messages.concat(message.replies);
         });
+        const sort_messages = messages.sort((a,b) => {
+          const timeA = new Date(a.create_time);
+          const timeB = new Date(b.create_time);
+          return timeB - timeA;
+        });
+        console.log(sort_messages);
         page.setData({
           user_id: user_id,
           user: res.data,
-          messages: messages,
+          messages: sort_messages,
           unread: messages.filter(message => message.read_status === false)
         })
       }
@@ -113,13 +119,7 @@ Page({
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
-    let messages = this.data.messages;
-    messages_sorted = messages.sort((a,b) => {
-      return a.creat_time - b.creat_time;
-    });
-    this.setData({
-      messages: messages_sorted
-    })
+
   },
 
   /**
