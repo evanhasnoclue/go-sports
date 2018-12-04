@@ -39,14 +39,74 @@ Page({
   readMessage: function(e) {
     console.log(e);
     if (e.currentTarget.dataset.msg.sport_id) {
-      wx.redirectTo({
-        url: `/pages/show/show?id=${e.currentTarget.dataset.msg.sport_id}`,
-      })
+      wx.request({
+        url: `${app.globalData.url}/messages/${e.currentTarget.dataset.msg.id}`,
+        method: 'PUT',
+        data: {
+          read_status: true
+        },
+        success: (res) => {
+          console.log(res.data);
+          wx.redirectTo({
+            url: `/pages/show/show?id=${e.currentTarget.dataset.msg.sport_id}`,
+          })
+        }
+      });
     } else if (e.currentTarget.dataset.message_id) {
-      wx.redirectTo({
-        url: `/pages/show/show?id=${e.currentTarget.dataset.message.sport_id}`,
-      })
+      wx.request({
+        url: `${app.globalData.url}/replies/${e.currentTarget.dataset.msg.id}`,
+        method: 'PUT',
+        data: {
+          read_status: true
+        },
+        success: (res) => {
+          console.log(res.data);
+          wx.redirectTo({
+            url: `/pages/show/show?id=${e.currentTarget.dataset.message.sport_id}`,
+          })
+        }
+      });
+
     }
+  },
+
+  readAll: function(e) {
+    let page = this;
+    wx.showLoading({
+      title: 'Reading...',
+    })
+    page.data.unread.forEach((msg) => {
+      if (msg.sport_id) {
+        wx.request({
+          url: `${app.globalData.url}/messages/${msg.id}`,
+          method: 'PUT',
+          data: {
+            read_status: true
+          },
+          success: (res) => {
+
+          }
+        })
+      } else if (msg.message_id) {
+        wx.request({
+          url: `${app.globalData.url}/replies/${msg.id}`,
+          method: 'PUT',
+          data: {
+            read_status: true
+          },
+          success: (res) => {
+
+          }
+        })
+      }
+    });
+    page.onLoad({id: page.data.user_id});
+    wx.hideLoading();
+    wx.showToast({
+      title: 'All read!',
+      icon: 'success',
+      duration: 1500
+    });
   },
 
   /**

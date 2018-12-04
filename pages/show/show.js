@@ -85,6 +85,9 @@ Page({
 
   bookSports: function(e) {
     let page = this;
+    wx.showLoading({
+      title: 'Loading...',
+    })
     wx.getStorage({
       key: 'current_user',
       success: function (user) {
@@ -102,7 +105,13 @@ Page({
             page.setData({
               booking: res.data
             });
-            page.onLoad({ id: page.data.sport.id })
+            page.onLoad({ id: page.data.sport.id });
+            wx.hideLoading();
+            wx.showToast({
+              title: 'Joined!',
+              icon: 'success',
+              duration: 1000
+            });
           }
         })
       },
@@ -147,6 +156,9 @@ Page({
 
   cancelBooking: function(e) {
     let page=this;
+    wx.showLoading({
+      title: 'Loading...',
+    })
     wx.request({
       url: `${app.globalData.url}/sports/${page.data.sport.id}/bookings/${page.data.booking.id}`,
       method: 'DELETE',
@@ -155,7 +167,13 @@ Page({
         page.setData({
           booking:false
         });
-        page.onLoad({ id: page.data.sport.id })
+        page.onLoad({ id: page.data.sport.id });
+        wx.hideLoading();
+        wx.showToast({
+          title: 'Canceled!',
+          icon: 'success',
+          duration: 1000
+        });
       }
     })
   },

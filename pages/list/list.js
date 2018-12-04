@@ -141,11 +141,17 @@ Page({
               user: res.data,
               unread: messages.filter(message => message.read_status === false).length
             });
-            wx.setTabBarBadge({
-              index: 1,
-              text: `${page.data.unread}`,
-            });
-            app.globalData.unread = messages.filter(message => message.read_status === false).length
+            app.globalData.unread = messages.filter(message => message.read_status === false).length;
+            if (page.data.unread === 0) {
+              wx.removeTabBarBadge({
+                index: 1,
+              })
+              } else {
+              wx.setTabBarBadge({
+                index: 1,
+                text: `${page.data.unread}`,
+              })
+              }
           }
         })
       },

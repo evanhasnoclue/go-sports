@@ -10,7 +10,7 @@
   <view class='actions'>
   <view class='message-center'>
    <image src='../../images/message.png' class='icon1' bindtap='showMessages' />
-   <view class='unread-number'>{{unread}}</view>
+   <view class="{{unread!=0 ? 'unread-number' : 'hidden'}}">{{unread}}</view>
   </view>
   <image src='../../images/add.png' class='icon2' bindtap='onCreate' />
   <image src='../../images/share-primary.png' class='icon2' />
