@@ -16,7 +16,7 @@
         <view class='msg-title'>
           <view class="{{message.read_status ? 'hidden' : 'unread-dot'}} border-round color-primary"> </view>
           <view wx:if='{{message.sport_id}}' class='msg-title font-content'>New message </view>
-          <view wx:if='{{message.message_id}}' class='msg-title font-content'>New reply</view>
+          <view wx:if='{{message.message}}' class='msg-title font-content'>New reply</view>
         </view>
         <view class='msg-body line-limited font-content font-grey'>{{message.content}}</view>
       </view>

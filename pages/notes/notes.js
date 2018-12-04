@@ -52,7 +52,7 @@ Page({
           })
         }
       });
-    } else if (e.currentTarget.dataset.message_id) {
+    } else if (e.currentTarget.dataset.msg.message) {
       wx.request({
         url: `${app.globalData.url}/replies/${e.currentTarget.dataset.msg.id}`,
         method: 'PUT',
@@ -62,7 +62,7 @@ Page({
         success: (res) => {
           console.log(res.data);
           wx.redirectTo({
-            url: `/pages/show/show?id=${e.currentTarget.dataset.message.sport_id}`,
+            url: `/pages/show/show?id=${e.currentTarget.dataset.msg.message.sport_id}`,
           })
         }
       });
@@ -87,7 +87,7 @@ Page({
 
           }
         })
-      } else if (msg.message_id) {
+      } else if (msg.message) {
         wx.request({
           url: `${app.globalData.url}/replies/${msg.id}`,
           method: 'PUT',
