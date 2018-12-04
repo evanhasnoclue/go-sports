@@ -324,18 +324,4 @@
   align-items: center;
 }
 
-.shopping{
-  position: fixed;
-  display: flex;
-  align-items: center;
-  top: 30px;
-  right: 20px;
-}
-.shop-btn{
-  height: 42px;
-  background-color: #ea5455;
-  color: white;
-  margin-right: 3px;
-  border-radius: 20px
 
-}

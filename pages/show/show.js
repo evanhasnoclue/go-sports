@@ -8,8 +8,7 @@ Page({
   data: {
     liked: false,
     new_message: false,
-    replies_show:false,
-    show: false
+    replies_show:false
   },
 
   /**
@@ -112,6 +111,7 @@ Page({
         wx.getStorage({
           key: 'open_id',
           success: (res) => {
+            const open_id = res.data
             wx.getUserInfo({
               success: function (res) {
                 const userInfo = res.userInfo
@@ -122,7 +122,7 @@ Page({
                   city: userInfo.city,
                   province: userInfo.province,
                   country: userInfo.country,
-                  open_id: res.data
+                  open_id: open_id
                 };
                 wx.request({
                   url: app.globalData.url + '/users',
@@ -294,16 +294,5 @@ Page({
     wx.navigateTo({
       url: '/pages/map/map'
     });
-  },
-  goDecat: function(){
-    wx.navigateTo({
-      url: '/pages/ad/ad'
-    });
-  },
-  showBtn: function () {
-    let status = !this.data.show
-    this.setData({
-      show: status
-    })
   }
 })
