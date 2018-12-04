@@ -1,9 +1,6 @@
 <view class="weui-cell">
   <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
     <image src="{{profile.avatarUrl}}" style="width: 50px; height: 50px; display: block" />
-    <view class="weui-badge" style="position: absolute; display: none; top: -.4em;right: -.4em;">
-      6
-    </view>
   </view>
   <view class="weui-cell__bd">
     <view>{{profile.name}}</view>
@@ -11,7 +8,10 @@
     <image src="../../images/{{profile.gender}}.png" style="width:20px;height:20px"/>
   </view>
   <view class='actions'>
-  <image src='../../images/message.png' class='icon1' bindtap='showMessages' />
+  <view class='message-center'>
+   <image src='../../images/message.png' class='icon1' bindtap='showMessages' />
+   <view class="{{unread!=0 ? 'unread-number' : 'hidden'}}">{{unread}}</view>
+  </view>
   <image src='../../images/add.png' class='icon2' bindtap='onCreate' />
   <image src='../../images/share-primary.png' class='icon2' />
   </view>

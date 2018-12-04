@@ -117,9 +117,10 @@ Page({
             }
             // Update local data
             that.setData({
-              profile: res.data
+              profile: res.data,
+              unread: app.globalData.unread
             });
-        console.log(that.data )
+        // console.log(that.data )
         let result = 0
         for (let i=0;i<res.data.sports.length; i++){
           result = result + res.data.sports[i].like
@@ -195,7 +196,7 @@ wx.navigateTo({
 
   showMessages: function(e) {
     const user_id = this.data.profile.id;
-    wx.redirectTo({
+    wx.navigateTo({
       url: `/pages/notes/notes?id=${user_id}`,
     })
   },
@@ -218,7 +219,7 @@ wx.navigateTo({
       activeIndex: e.currentTarget.id
     });
     if (e.currentTarget.id=="2"){
-      console.log(this.data.sportsIndicator)
+      // console.log(this.data.sportsIndicator)
       // let sportsIndicator = [56, 30, 30, 40, 87, 122]
       this.createChart(this.data.sportsIndicator)
     }
