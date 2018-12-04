@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
   <view class='title-box' >
-    <image src='../../images/walk.png' class='avatar' />
+    <image src='../../images/logo.png' class='avatar' />
     <view class='title'>Go Sports</view>
     <view class='title'>Together</view>
     </view>
