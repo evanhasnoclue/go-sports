@@ -182,7 +182,7 @@ wx.navigateTo({
         data: sportsIndicator
       }],
       // width: windowWidth,
-      width: 300,
+      width: windowWidth,
       // height: 200,
       height: 300,
       extra: {
