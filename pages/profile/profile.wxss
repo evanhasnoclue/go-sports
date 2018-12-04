@@ -114,3 +114,23 @@ page,
   width:30px;
   height:30px;
 }
+
+.message-center {
+  position: relative;
+  height: 40px;
+  width: 40px;
+}
+
+.unread-number {
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 0;
+  right: -2px;
+  background-color: #ea5455;
+  color: white;
+  font-size: 10px;
+  text-align: center;
+  font-weight: bold;
+}

@@ -122,7 +122,36 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-
+    let page = this;
+    wx.getStorage({
+      key: 'current_user',
+      success: function(res) {
+        wx.request({
+          url: `${app.globalData.url}/users/${res.data.id}`,
+          method: 'GET',
+          success: (res) => {
+            let messages = [];
+            res.data.sports.forEach((sport) => {
+              messages = messages.concat(sport.messages);
+            });
+            res.data.messages.forEach((message) => {
+              messages = messages.concat(message.replies);
+            });
+            page.setData({
+              user: res.data,
+              unread: messages.filter(message => message.read_status === false).length
+            });
+            wx.setTabBarBadge({
+              index: 1,
+              text: `${page.data.unread}`,
+            });
+            app.globalData.unread = messages.filter(message => message.read_status === false).length
+          }
+        })
+      },
+    })
+   
+  
   },
 
   /**

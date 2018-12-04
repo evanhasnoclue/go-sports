@@ -116,7 +116,8 @@ Page({
           success(res) {
             // Update local data
             that.setData({
-              profile: res.data
+              profile: res.data,
+              unread: app.globalData.unread
             });
         console.log(that.data )
         let result = 0
