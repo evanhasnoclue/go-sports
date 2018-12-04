@@ -118,7 +118,7 @@ Page({
             that.setData({
               profile: res.data
             });
-        console.log(that.data )
+        // console.log(that.data )
         let result = 0
         for (let i=0;i<res.data.sports.length; i++){
           result = result + res.data.sports[i].like
@@ -210,7 +210,7 @@ wx.navigateTo({
       activeIndex: e.currentTarget.id
     });
     if (e.currentTarget.id=="2"){
-      console.log(this.data.sportsIndicator)
+      // console.log(this.data.sportsIndicator)
       // let sportsIndicator = [56, 30, 30, 40, 87, 122]
       this.createChart(this.data.sportsIndicator)
     }
