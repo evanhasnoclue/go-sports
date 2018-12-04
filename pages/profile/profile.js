@@ -46,7 +46,7 @@ Page({
       background: '#0099ff'
     }
     ],
-    tabs: ["参加活动", "创建活动", "我的记录",],
+    tabs: ["Joined", "Hosted", "My data",],
     activeIndex: 1,
     sliderOffset: 0,
     sliderLeft: 0,
@@ -103,17 +103,18 @@ Page({
     wx.getStorage({
       key: 'current_user',
       success: (res) => {
-        if (res.data.gender == "2") {
-          res.data.gender = "女"
-        }
-        if (res.data.gender == "1") {
-          res.data.gender = "男"
-        }
+
         const profile = res.data;
         wx.request({
           url: app.globalData.url + "/users/" + profile.id,
           method: 'GET',
           success(res) {
+            if (res.data.gender == "2") {
+              res.data.gender = "woman"
+            }
+            if (res.data.gender == "1") {
+              res.data.gender = "man"
+            }
             // Update local data
             that.setData({
               profile: res.data
