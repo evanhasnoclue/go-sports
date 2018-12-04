@@ -4,8 +4,8 @@
   </view>
   <view class="weui-cell__bd">
     <view>{{profile.name}}</view>
-    <view style="font-size: 13px;color: #888888;">{{profile.province}}{{profile.gender}}</view>
-    <input bindblur='saveTel' value="18612345678"></input>
+  <text style="font-size: 15px;color: #888888;">{{profile.province}} \n </text>
+    <image src="../../images/{{profile.gender}}.png" style="width:20px;height:20px"/>
   </view>
   <view class='actions'>
   <view class='message-center'>
@@ -91,7 +91,7 @@
           </block>
         </view>
           <view class="weui-tab__content" hidden="{{activeIndex != 2}}"  >
-          <view class="container">
+          <view class="container2">
     <canvas canvas-id="radarCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
 </view>
           </view>
