@@ -33,7 +33,7 @@
             <block wx:for="{{profile.bookings}}" wx:for-item="booking" wx:key="booking.id">
               <i-swipeout i-class="i-swipeout-demo-item" bind:change="cancelBooking" data-bookingid="{{booking.id}}" id="{{booking.sport.id}}" actions="{{actions2}}">
                 <view slot="content">
-                    <view bindtap="showSport" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{booking.sport.photo}});" data-voyage="{{booking.sport}}">
+                    <view bindtap="showSport" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{booking.sport.photo}});" data-sport="{{booking.sport}}">
 
                       <view class="card-category">
                         {{booking.sport.level}}
@@ -62,7 +62,7 @@
               <i-swipeout i-class="i-swipeout-demo-item" bind:change="buttonDelete" id="{{sport.id}}">
                 <view slot="content">
 
-                  <view bindtap="showSport" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{sport.photo}});" data-voyage="{{sport}}">
+                  <view bindtap="showSport" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{sport.photo}});" data-sport="{{sport}}">
 
                     <view class="card-category">
                       {{sport.level}}
