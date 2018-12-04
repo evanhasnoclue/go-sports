@@ -195,7 +195,7 @@ wx.navigateTo({
 
   showMessages: function(e) {
     const user_id = this.data.profile.id;
-    wx.redirectTo({
+    wx.navigateTo({
       url: `/pages/notes/notes?id=${user_id}`,
     })
   },
