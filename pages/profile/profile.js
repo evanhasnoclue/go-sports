@@ -201,6 +201,19 @@ wx.navigateTo({
     })
   },
 
+  // showSport: function (e) {
+  //   console.log(e.target)
+  //   wx.navigateTo({
+  //     url: `../show/show?id=${e.target.dataset.sport.id}`,
+  //   })
+  // },
+
+  showSport: function (e) {
+    wx.navigateTo({
+      url: `../show/show?id=${e.currentTarget.dataset.sport.id}`,
+    });
+  },
+
   onReady: function(e) {
 
   },
@@ -259,4 +272,6 @@ wx.navigateTo({
   onShareAppMessage: function () {
 
   }
+  
+  
 })
