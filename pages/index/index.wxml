@@ -1,9 +1,11 @@
 <!--index.wxml-->
 <view class="container">
   <view class='title-box' >
-    <image src='../../images/logo.png' class='avatar' />
-    <view class='title'>Go Sports</view>
-    <view class='title'>Together</view>
+  <view class='flex'>    
+      <view class='title'>Sports</view>
+<image src='../../images/logo2.png' class='avatar' />
     </view>
+  </view>
+
     <button wx:if="{{!hasUserInfo && canIUse}}" class='button' open-type="getUserInfo" bindgetuserinfo="getUserInfo"> Wechat login </button>
 </view>
