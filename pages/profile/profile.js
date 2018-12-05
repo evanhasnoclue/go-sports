@@ -122,7 +122,7 @@ Page({
     } catch (e) {
       console.error('getSystemInfoSync failed!');
     }
-
+    console.log('111');
     wx.getStorage({
       key: 'current_user',
       success: (res) => {
@@ -145,37 +145,42 @@ Page({
               categories.push(sport[0])
               }
             })
-            columnChart = new wxCharts({
-              canvasId: 'columnCanvas',
-              type: 'column',
-              animation: true,
-              categories: categories,
-              series: [{
-                name: 'DIVERSIFIED SPORTS',
-                data: times,
-                format: function (val, name) {
-                  return val.toFixed(0) + '';
-                }
-              }],
-              yAxis: {
-                format: function (val) {
-                  return val + 'times';
+            if (categories.length && times.length) {
+              console.log('drawing');
+              columnChart = new wxCharts({
+                canvasId: 'columnCanvas',
+                type: 'column',
+                animation: true,
+                categories: categories,
+                series: [{
+                  name: 'DIVERSIFIED SPORTS',
+                  data: times,
+                  format: function (val, name) {
+                    return val.toFixed(0) + '';
+                  }
+                }],
+                yAxis: {
+                  format: function (val) {
+                    return val + 'times';
+                  },
+                  title: 'Frequency',
+                  min: 0
                 },
-                title: 'Frequency',
-                min: 0
-              },
-              xAxis: {
-                disableGrid: false,
-                type: 'calibration'
-              },
-              extra: {
-                column: {
-                  width: 15
-                }
-              },
-              width: windowWidth,
-              height: 200,
-            });
+                xAxis: {
+                  disableGrid: false,
+                  type: 'calibration'
+                },
+                extra: {
+                  column: {
+                    width: 15
+                  }
+                },
+                width: windowWidth,
+                height: 200,
+              });
+              console.log('drawed');
+            }
+            
             // Update local data
             that.setData({
               profile: res.data,
@@ -279,6 +284,7 @@ wx.navigateTo({
    */
   onShow: function () {
     let page = this;
+    console.log('222');
     wx.getStorage({
       key: 'current_user',
       success: function (res) {
