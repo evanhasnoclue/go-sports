@@ -209,7 +209,7 @@ Page({
       }
     });
 
-
+    page.createChart()
   },
   
 onCreate: function(e) {
