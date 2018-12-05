@@ -12,6 +12,7 @@ Page({
     region: ["Province", "City", "District"],
     categories: ['All', 'running', 'fitness', 'badminton', 'basketball', 'football', 'hiking', 'swimming', 'tennis'],
     index: 0,
+    capacity: 1,
     start_time:"2018-12-30 17:00",
     end_time:"2018-12-30 17:00"
     // photo_url: "http://lc-sJYm7PNe.cn-n1.lcfile.com/20df49b6ae9de0362345"
@@ -219,6 +220,32 @@ Page({
   back: function() {
     wx.switchTab({
       url: '/pages/profile/profile',
+    })
+  },
+
+  onGreater: function() {
+    let n = this.data.capacity;
+    this.setData({
+      capacity: n + 1
+    })
+  },
+
+  onLess: function () {
+    let n = this.data.capacity;
+    if (n <= 1) {
+      this.setData({
+        capacity: 1
+      })
+    } else {
+    this.setData({
+      capacity: n - 1
+    })
+    }
+  },
+
+  countText: function(e) {
+    this.setData({
+      description: e.detail.value
     })
   },
 
