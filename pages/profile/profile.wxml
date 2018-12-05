@@ -89,7 +89,6 @@
                   </view>
                 </view>
                 <view slot="button" class="i-swipeout-demo-button-group">
-                 <view bindtap="editEvent" class="i-swipeout-demo-button edit" id="{{sport.id}}">编辑</view>
 
                   <view bindtap="buttonDelete" class="i-swipeout-demo-button delete" id="{{sport.id}}">删除</view>
                   <!-- <view bindtap="buttonShare" class="i-swipeout-demo-button share" id="{{voyage.id}}" >分享</view> -->
