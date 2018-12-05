@@ -1,0 +1,52 @@
+<view class="weui-cell">
+  <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+    <image src="{{profile.avatarUrl}}" style="width: 50px; height: 50px; display: block" />
+  </view>
+  <view class="weui-cell__bd">
+    <view style="margin-top: 10px; display:flex">{{profile.nickname}}</view> 
+    <view style="display:flex;">
+    <text style="font-size: 15px;color: #888888;">{{profile.province}} </text>
+  <view> <image src="../../images/{{profile.gender}}.png" style="width:20px;height:20px"/></view>
+  </view> 
+  </view>
+</view>
+
+<view class='container-record'>
+            <view class = 'record-blocks border-right'>
+              <text class='record-text'>Participated</text>
+              <text class='record-number'>{{profile.sports.length+profile.bookings.length}}</text>
+              <text class='record-text'>Events</text>
+            </view>
+
+            <view class = 'record-blocks border-right'>
+              <text class='record-text'>Received</text>
+              <text class='record-number'>{{likes}}</text>
+              <text class='record-text'>Likes</text>
+            </view>
+
+            <view class = 'record-blocks'>
+              <text class='record-text'>Discoverd</text>
+              <text class='record-number'>{{profile.fav_sports.length}}</text>
+              <text class='record-text'>Sports</text>
+            </view>
+            
+          </view>
+          <view class="container2">
+    <canvas canvas-id="radarCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
+</view> 
+  <view class="big">
+    <view class="side">
+      <view class="explaination left"><image src="../../images/P.png" style="width:10px;height:10px"/>Participation: number of events</view>
+      <view class="explaination left"><image src="../../images/edit.png" style="width:10px;height:10px"/>Replies: number of replies </view>
+      <view class="explaination left"><image src="../../images/L.png" style="width:10px;height:10px"/>Likes: number of likes </view>
+    </view>
+    <view class="side">
+      <view class="explaination right"><image src="../../images/F.png" style="width:10px;height:10px"/>Favoraties: number of favoraties</view>
+      <view class="explaination right"><image src="../../images/S.png" style="width:10px;height:10px"/>Sports: number of sports </view>
+    </view>
+  </view> 
+  <view class="internal">
+  </view>
+  <canvas canvas-id="columnCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
+    
+
