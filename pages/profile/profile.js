@@ -138,7 +138,7 @@ Page({
             if (res.data.gender == "1") {
               res.data.gender = "man"
             }
-            res.data.sports.forEach (sport => likes += sport.like)
+             res.data.sports.forEach(sport => likes += sport.like)
             res.data.fav_sports.forEach( (sport) => {
               if (sport[0] !== ""){
               times.push(sport[1])
@@ -232,7 +232,7 @@ wx.navigateTo({
     radarChart = new wxCharts({
       canvasId: 'radarCanvas',
       type: 'radar',
-      categories: ['P', 'F', 'R', 'D', 'L'],
+      categories: ['A', 'O', 'I', 'L', 'P'],
       // P:participation,
       // F:favorite
       // R:replies
@@ -282,6 +282,25 @@ wx.navigateTo({
   /**
    * Lifecycle function--Called when page show
    */
+  buttonDelete: function (e) {
+    let page = this;
+    console.log(e)
+    wx.request({
+      url: `${app.globalData.url}/sports/${e.currentTarget.id}`,
+      method: 'DELETE',
+      success() {
+        page.onLoad();
+        // wx.switchTab({
+        //   url: '/pages/profile/profile'
+        // });
+      },
+      fail: function (res) {
+        wx.switchTab({
+          url: '/pages/profile/profile'
+        })
+      },
+    })
+  },
   onShow: function () {
     let page = this;
     console.log('222');
@@ -296,6 +315,7 @@ wx.navigateTo({
             res.data.sports.forEach((sport) => {
               messages = messages.concat(sport.messages);
             });
+            
             res.data.messages.forEach((message) => {
               messages = messages.concat(message.replies);
             });
@@ -320,9 +340,27 @@ wx.navigateTo({
     });
     this.onLoad();
   },
+  cancelBooking: function (e) {
+    let page = this;
+    console.log(e)
+    wx.request({
+      url: `${app.globalData.url}/sports/${e.currentTarget.id}/bookings/${e.currentTarget.dataset.bookingid}`,
+      method: 'DELETE',
+      success() {
+        page.onLoad();
+        // wx.switchTab({
+        //   url: '/pages/profile/profile'
+        // });
+      },
+      fail: function (res) {
+        wx.switchTab({
+          url: '/pages/profile/profile'
+        })
+      },
+    })
+  },
   
   tabClick: function (e) {
-    console.log("tab clicked")
     this.setData({
       sliderOffset: e.currentTarget.offsetLeft,
       activeIndex: e.currentTarget.id

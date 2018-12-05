@@ -89,7 +89,6 @@
                   </view>
                 </view>
                 <view slot="button" class="i-swipeout-demo-button-group">
-                 <view bindtap="editEvent" class="i-swipeout-demo-button edit" id="{{sport.id}}">编辑</view>
 
                   <view bindtap="buttonDelete" class="i-swipeout-demo-button delete" id="{{sport.id}}">删除</view>
                   <!-- <view bindtap="buttonShare" class="i-swipeout-demo-button share" id="{{voyage.id}}" >分享</view> -->
@@ -123,13 +122,13 @@
 </view> 
   <view class="big">
     <view class="side">
-      <view class="explaination left"><image src="../../images/P.png" style="width:10px;height:10px"/>Participation: number of events</view>
-      <view class="explaination left"><image src="../../images/edit.png" style="width:10px;height:10px"/>Replies: number of replies </view>
-      <view class="explaination left"><image src="../../images/L.png" style="width:10px;height:10px"/>Likes: number of likes </view>
+      <view class="explaination left"><image src="../../images/P.png" style="width:10px;height:10px"/>Activness: no. of events joined</view>
+      <view class="explaination left"><image src="../../images/edit.png" style="width:10px;height:10px"/>Interaction: interactions with users</view>
+      <view class="explaination left"><image src="../../images/L.png" style="width:10px;height:10px"/>Porpularity: no. of likes received</view>
     </view>
     <view class="side">
-      <view class="explaination right"><image src="../../images/F.png" style="width:10px;height:10px"/>Favoraties: number of favoraties</view>
-      <view class="explaination right"><image src="../../images/S.png" style="width:10px;height:10px"/>Sports: number of sports </view>
+      <view class="explaination right"><image src="../../images/F.png" style="width:10px;height:10px"/>Omnisport: variety of sports played</view>
+      <view class="explaination right"><image src="../../images/S.png" style="width:10px;height:10px"/>Leadership: no. of events hosted</view>
     </view>
   </view> 
   <view class="internal">
