@@ -112,6 +112,9 @@
       <view class="explaination right">Sports: number of sports </view>
     </view>
   </view> 
+  <view class="internal">
+  </view>
+  <canvas canvas-id="columnCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
     
 </view>
 

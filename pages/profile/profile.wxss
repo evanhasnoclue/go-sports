@@ -184,3 +184,7 @@ page,
   padding-left:-40px;
 }
 
+.internal{
+  height: 30px;
+}
+
