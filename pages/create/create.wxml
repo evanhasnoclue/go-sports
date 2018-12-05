@@ -5,111 +5,140 @@
 
 
 <form bindsubmit="bindSubmit">
-  <view class="wrapper text-center">
-    <view class='photo-container' bindtap='takePhoto' style="background-image: url({{photo_url}});">
+  <view class="photo-wrapper text-center">
+    <view class="photo-container {{photo_url ? 'show' : 'default' }}" bindtap='takePhoto' style="background-image: url({{photo_url}});">
       <view wx:if="{{photo_url==nil}}" class='flex-column'>
-      <image  style="width: 50px; height: 35px; "src="../../images/upload_photo1.png"></image>
-      <text>A nice photo always helps with attracting more attendees...</text>
+        <image style="width:70px; height:60px;" src="../../images/upload_photo1.png"></image>
+        <view class='font-content font-white font-bold'>A nice photo always helps attract more attendees...</view>
       </view>
     </view>
     <!-- <view bindtap='takePhoto' class="photo-container">
       Add photo
     </view> -->
   </view>
-
-  <view class="user-input">
-    <view class="text-area-wrap">
-      <textarea value="{{title}}" style="input-size" placeholder="Title" class="input-height" name="title" maxlength="-1" auto-height />
-    </view>
-  </view>
-
-<view class="user-input-2">
-    <view class="text-area-wrap-2">
-      <textarea value="{{category}}" style="input-size" placeholder="Please choose category from list" class="input-height" name="category" maxlength="-1" auto-height />
-    </view>
-    <picker bindchange="bindPickerChange1" range="{{categories}}">
-        <image class='icon' bindtap='bindPickerChange1' style="width: 25px; height: 25px;" src="../../images/pulldown.png"></image>
-    </picker>
-  </view>
-
-   <!-- <view class="text-area-wrap">
-    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-      <textarea value="{{category}}" style="input-size" placeholder="Category"  name="category" />
-    </picker>
-  </view> -->
-
-  <view class="user-input-2">
-    <view class="text-area-wrap-2">
-      <textarea bindtap='selectLocation' value="{{address}}" style="input-size" placeholder="Please choose address from map" class="input-height" name="address" auto-height />
-    </view>
-    <!-- <button bindtap='selectLocation' class = 'btn-small'> -->
-    <image class='icon' bindtap='selectLocation' style="width: 25px; height: 25px;" src="../../images/map1.png"></image>
-    <!-- </button> -->
-  </view>
-
-  <view class="section card-shadow">
-    <view class="tui-picker-content">
-      <view class="tui-picker-name">Start time</view>
-      <picker class='picker-extend' mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime1" bindcolumnchange="changeDateTimeColumn1" range="{{dateTimeArray1}}">
-        <view class="tui-picker-detail">
-        <text class='timepicker' >{{start_time}}</text>
+  <view class='wrapper'>
+    <view class='row-1'>
+      <view class='input-group width-title'>
+        <view class='font-title font-primary input-tag'>Title</view>
+        <view class="user-input">
+          <view class="text-area-wrap">
+            <textarea value="{{title}}" style="input-size" placeholder="Type a name for your event" class="input-height" name="title" maxlength="-1" auto-height />
+          </view>
         </view>
-      </picker>
-    </view>
+      </view>
+      </view>
 
-    <view class="tui-picker-content">
-      <view class="tui-picker-name">End time</view>
-      <picker class='picker-extend' mode="multiSelector" value="{{dateTime2}}" bindchange="changeDateTime2" bindcolumnchange="changeDateTimeColumn2" range="{{dateTimeArray2}}">
-        <view class="tui-picker-detail">
-        <text class='timepicker'>{{end_time}}</text>
-          <!-- <textarea class='timepicker' value="{{dateTimeArray2[0][dateTime2[0]]}}-{{dateTimeArray2[1][dateTime2[1]]}}-{{dateTimeArray2[2][dateTime2[2]]}} {{dateTimeArray2[3][dateTime2[3]]}}:{{dateTimeArray2[4][dateTime2[4]]}}" style="input-size" placeholder="start time" name="end_time"
-          /> -->
+
+
+    <view class='row-2'>
+      <view class='input-group width-category'>
+      <view class="font-title font-primary input-tag">Category</view>
+        <view class="user-input">
+          <view class="text-area-wrap">
+            <textarea value="{{category}}" style="input-size" placeholder="sports" class="input-height" name="category" maxlength="-1" auto-height />
+          </view>
+          <picker bindchange="bindPickerChange1" range="{{categories}}">
+            <image class='icon' bindtap='bindPickerChange1' style="width: 25px; height: 25px;padding-top:12px;" src="../../images/pulldown.png"></image>
+          </picker>
         </view>
-      </picker>
+      </view>
+      <view class="input-group width-level">
+        <view class="font-title font-primary input-tag">Level</view>
+        <view class='user-input'>
+          <view class="text-area-wrap">
+            <textarea value="{{levels[level]}}" placeholder="select" name="level" auto-height />
+          </view>
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{levels}}">
+            <image class='icon' bindtap='bindPickerChange1' style="width: 25px; height: 25px;padding-top:12px;" src="../../images/pulldown.png"></image>
+            </picker>
+        </view>
+      </view>
     </view>
 
-  </view>
+    <view class='row-2-2'>
+      <view class="input-group width-capacity">
+        <view class='font-title font-primary input-tag'>Capacity</view>
+        <view class='user-input'>
+          <view class='text-area-wrap'>
+            <textarea value="{{capacity}}" placeholder="0" name="capacity" auto-height />
+          </view>
+            <view class='up-down'>
+            <image src="../../images/pullup.png" style="width:25px; height:20px;border-left: 1px solid rgb(200,200,200);" bindtap='onGreater' />
+            <image src="../../images/pulldown.png" style="width:25px; height:20px;border-left: 1px solid rgb(200,200,200);border-top: 1px solid rgb(200,200,200);" bindtap='onLess' />
+            </view>
+        </view>
+      </view>
+            <view class="input-group width-price">
+        <view class="font-title font-primary input-tag">Price</view>
+        <view class='user-input'>
+          <view class='font-title font-primary' style="padding-top: 12px;">￥</view>
+          <view class='text-area-wrap'>
+            <textarea value="{{price}}" placeholder="0.00" name="price" auto-height />
+          </view>
+          <view class='font-title font-primary' style="padding-top: 12px;">/ppl.</view>
+        </view>
+      </view>
+      </view>
 
-  <!-- <picker name='start_time' mode="time" value="{{start_time}}" start="2018-09-01" end="2028-09-01" bindchange="bindTimeChange1">
+    <view class='input-group'>
+      <view class='font-title font-primary input-tag'>Location</view>
+      <view class="user-input">
+        <view class="text-area-wrap">
+          <textarea bindtap='selectLocation' value="{{address}}" style="input-size" placeholder="Please choose address from map" class="input-height" name="address" auto-height />
+        </view>
+        <!-- <button bindtap='selectLocation' class = 'btn-small'> -->
+        <image class='icon' bindtap='selectLocation' style="width: 25px; height: 25px;" src="../../images/map1.png"></image>
+        <!-- </button> -->
+      </view>
+    </view>
+
+    <view class='input-group row-3'>
+    <view class='font-title font-primary input-tag'>Time</view>
+      <view class="user-input inline-input">
+        <view class="font-title font-bold font-grey">Start at: </view>
+        <picker  class='picker-time' mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime1" bindcolumnchange="changeDateTimeColumn1" range="{{dateTimeArray1}}">
+          <view class="picker-time-show">
+            <text class='font-title'>{{start_time}}</text>
+            <image src='../../images/time.png' style="width:25px;height:25px;" />
+          </view>
+        </picker>
+      </view>
+
+      <view class="user-input inline-input">
+        <view class="font-title font-bold font-grey">End at: </view>
+        <picker   class='picker-time' mode="multiSelector" value="{{dateTime2}}" bindchange="changeDateTime2" bindcolumnchange="changeDateTimeColumn2" range="{{dateTimeArray2}}">
+          <view class='picker-time-show'>
+            <text class='timepicker'>{{end_time}}</text>
+            <image src='../../images/time.png' style="width:25px;height:25px;" />
+          </view>
+        </picker>
+      </view>
+
+
+    </view>
+
+    <!-- <picker name='start_time' mode="time" value="{{start_time}}" start="2018-09-01" end="2028-09-01" bindchange="bindTimeChange1">
 </picker> -->
 
-  <!-- <picker name='deadline' mode="date" value="{{date2}}" start="2018-09-01" end="2028-09-01" bindchange="bindDateChange2">
+    <!-- <picker name='deadline' mode="date" value="{{date2}}" start="2018-09-01" end="2028-09-01" bindchange="bindDateChange2">
         <view class="weui-input">{{date2}}</view>
   </picker> -->
 
-
-
-
-  <view class="section card-shadow ">
-    <view class="squre-input">
-      <textarea value="{{capacity}}" placeholder="capacity" name="capacity" />
-    </view>
-    <view class="squre-input">
-      <picker bindchange="bindPickerChange" value="{{index}}" range="{{levels}}">
-        <view class="picker">
-          <textarea value="{{levels[level]}}" placeholder="level" name="level" />
+    <view class="input-group row-4">
+    <view class='font-title font-primary input-tag'>Description</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <textarea name="description" value="{{description}}" class="weui-textarea" placeholder="Please enter your plan of this event" style="height: 40vh" bindinput='countText' />
+          <view class="weui-textarea-counter">{{description.length}}/500</view>
         </view>
-      </picker>
-    </view>
-    <view class="squre-input">
-      <textarea value="{{price}}" placeholder="price" name="price" />
-    </view>
-  </view>
-
-
-  <view class="weui-cells__title">Description</view>
-  <view class="weui-cells weui-cells_after-title">
-    <view class="weui-cell">
-      <view class="weui-cell__bd">
-        <textarea name="description" value="{{description}}" class="weui-textarea" placeholder="Please enter your description of this event" style="height: 3.3em" />
-        <view class="weui-textarea-counter">0/200</view>
       </view>
     </view>
   </view>
+</view>
 
-
-
-
-  <button style="margin-bottom:5px" class="btn" formType="submit" loading="{{loading}}">Submit</button>
+<view class='bottons'>
+  <button style="margin-bottom:5px" class="btn-primary" formType="submit" loading="{{loading}}">Submit</button>
+  <button style="margin-bottom:10" class="btn-warning" bindtap='back' loading="{{loading}}">Back</button>
+  </view>
 </form>
-    <button style="margin-bottom:10" class="btn warning" bindtap='back' loading="{{loading}}">Back</button>
