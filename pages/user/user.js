@@ -123,11 +123,9 @@ Page({
       console.error('getSystemInfoSync failed!');
     }
 
-    wx.getStorage({
-      key: 'current_user',
-      success: (res) => {
-
-        const profile = res.data;
+ 
+        const profile = options;
+        console.log('ff', profile)
         wx.request({
           url: app.globalData.url + "/users/" + profile.id,
           method: 'GET',
@@ -138,11 +136,11 @@ Page({
             if (res.data.gender == "1") {
               res.data.gender = "man"
             }
-            res.data.sports.forEach (sport => likes += sport.like)
-            res.data.fav_sports.forEach( (sport) => {
-              if (sport[0] !== ""){
-              times.push(sport[1])
-              categories.push(sport[0])
+            res.data.sports.forEach(sport => likes += sport.like)
+            res.data.fav_sports.forEach((sport) => {
+              if (sport[0] !== "") {
+                times.push(sport[1])
+                categories.push(sport[0])
               }
             })
             columnChart = new wxCharts({
@@ -181,25 +179,25 @@ Page({
               profile: res.data,
               unread: app.globalData.unread,
               likes: likes,
-              times:times,
-              categories:categories
+              times: times,
+              categories: categories
             });
-        // console.log(that.data )
-        let result = 0
-        for (let i=0;i<res.data.sports.length; i++){
-          result = result + res.data.sports[i].like
-        }       
-        let sportsIndicator = new Array(res.data.bookings.length*10,res.data.fav_sports.length*10,res.data.replies.length*10,res.data.sports.length*10,result*10)
-        that.setData({
-          sportsIndicator: sportsIndicator
-        });
-        wx.stopPullDownRefresh();
-        wx.hideNavigationBarLoading();
+            // console.log(that.data )
+            let result = 0
+            for (let i = 0; i < res.data.sports.length; i++) {
+              result = result + res.data.sports[i].like
+            }
+            let sportsIndicator = new Array(res.data.bookings.length * 10, res.data.fav_sports.length * 10, res.data.replies.length * 10, res.data.sports.length * 10, result * 10)
+            that.setData({
+              sportsIndicator: sportsIndicator
+            });
+            wx.stopPullDownRefresh();
+            wx.hideNavigationBarLoading();
+            that.createChart(that.data.sportsIndicator)
             // wx.hideToast();
           }
         });
-      }      
-    })
+     
     wx.getSystemInfo({
       success: function (res) {
         that.setData({
@@ -208,15 +206,17 @@ Page({
         });
       }
     });
-  },
-  
-onCreate: function(e) {
-wx.navigateTo({ 
-  url: `/pages/create/create`,
-})
-},
 
-  createChart: function(sportsIndicator) {
+    
+  },
+
+  onCreate: function (e) {
+    wx.navigateTo({
+      url: `/pages/create/create`,
+    })
+  },
+
+  createChart: function (sportsIndicator) {
     var windowWidth = 320;
     try {
       var res = wx.getSystemInfoSync();
@@ -251,7 +251,7 @@ wx.navigateTo({
     });
   },
 
-  showMessages: function(e) {
+  showMessages: function (e) {
     const user_id = this.data.profile.id;
     wx.navigateTo({
       url: `/pages/notes/notes?id=${user_id}`,
@@ -265,69 +265,52 @@ wx.navigateTo({
   //   })
   // },
 
-  showSport: function (e) {
-    wx.navigateTo({
-      url: `../show/show?id=${e.currentTarget.dataset.sport.id}`,
-    });
-  },
 
-  onReady: function(e) {
+  onReady: function (e) {
   },
 
   /**
    * Lifecycle function--Called when page show
    */
-  onShow: function () {
-    let page = this;
-    wx.getStorage({
-      key: 'current_user',
-      success: function (res) {
-        wx.request({
-          url: `${app.globalData.url}/users/${res.data.id}`,
-          method: 'GET',
-          success: (res) => {
-            let messages = [];
-            res.data.sports.forEach((sport) => {
-              messages = messages.concat(sport.messages);
-            });
-            res.data.messages.forEach((message) => {
-              messages = messages.concat(message.replies);
-            });
-            page.setData({
-              user: res.data,
-              unread: messages.filter(message => message.read_status === false).length
-            });
-            app.globalData.unread = messages.filter(message => message.read_status === false).length;
-            if (page.data.unread === 0) {
-              wx.removeTabBarBadge({
-                index: 1,
-              })
-            } else {
-              wx.setTabBarBadge({
-                index: 1,
-                text: `${page.data.unread}`,
-              })
-            }
-          }
-        })
-      },
-    });
-    this.onLoad();
-  },
-  
-  tabClick: function (e) {
-    console.log("tab clicked")
-    this.setData({
-      sliderOffset: e.currentTarget.offsetLeft,
-      activeIndex: e.currentTarget.id
-    });
-    if (e.currentTarget.id=="2"){
-      // console.log(this.data.sportsIndicator)
-      // let sportsIndicator = [56, 30, 30, 40, 87, 122]
-      this.createChart(this.data.sportsIndicator)
-    }
-  },
+  // onShow: function () {
+  //   let page = this;
+  //   wx.getStorage({
+  //     key: 'current_user',
+  //     success: function (res) {
+  //       wx.request({
+  //         url: `${app.globalData.url}/users/${res.data.id}`,
+  //         method: 'GET',
+  //         success: (res) => {
+  //           let messages = [];
+  //           res.data.sports.forEach((sport) => {
+  //             messages = messages.concat(sport.messages);
+  //           });
+  //           res.data.messages.forEach((message) => {
+  //             messages = messages.concat(message.replies);
+  //           });
+  //           page.setData({
+  //             user: res.data,
+  //             unread: messages.filter(message => message.read_status === false).length
+  //           });
+  //           app.globalData.unread = messages.filter(message => message.read_status === false).length;
+  //           if (page.data.unread === 0) {
+  //             wx.removeTabBarBadge({
+  //               index: 1,
+  //             })
+  //           } else {
+  //             wx.setTabBarBadge({
+  //               index: 1,
+  //               text: `${page.data.unread}`,
+  //             })
+  //           }
+  //         }
+  //       })
+  //     },
+  //   });
+  //   this.onLoad();
+  // },
 
+ 
   /**
    * Lifecycle function--Called when page hide
    */
@@ -363,6 +346,6 @@ wx.navigateTo({
   onShareAppMessage: function () {
 
   }
-  
-  
+
+
 })

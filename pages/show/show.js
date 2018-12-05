@@ -263,6 +263,13 @@ Page({
     })
   },
 
+  checkUser: function(e) {
+    const userId = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: `/pages/user/user?id=${userId}`,
+    })
+  },
+
   /**
    * Lifecycle function--Called when page is initially rendered
    */

@@ -7,6 +7,7 @@
     "pages/create/create",
     "pages/map/map",
     "pages/notes/notes",
+    "pages/user/user",
     "pages/logs/logs"
   ],
   "window": {

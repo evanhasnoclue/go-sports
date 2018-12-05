@@ -1,0 +1,220 @@
+/* page,
+.page, */
+/* .page__bd{
+    height: 100%;
+} */
+.page__bd{
+    padding-bottom: 0;
+}
+.weui-tab__content{
+    padding-top: 20px;
+    text-align: center;
+}
+
+.profilebox{
+  height: 100px;
+  width:100px;
+}
+
+.explaination{
+  font-size:10px;
+  color:#666666;
+}
+
+
+
+
+
+
+
+
+
+/**index.wxss**/
+
+/* Cards */
+.card {
+  height: 100px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+  margin-top: 10px;
+}
+.card-user {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 40px;
+  border-radius: 50%;
+}
+.card-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.card-description {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  text-align: left
+}
+.card-description .name {
+  font-size: 24px;
+}
+.card-description .tag {
+  font-size: 14px;
+  opacity: 0.7;
+  font-weight: lighter;
+}
+
+.weui-navbar{
+  background-color: white;
+}
+
+.i-swipeout-demo-button-group{
+  display:flex;
+  padding-top:25px;
+}
+
+.i-swipeout-demo-button{
+  color:'#fff';
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  justify-content: center;
+  display:flex; 
+
+}
+
+.edit{
+  background-color: #0099ff;
+  color:#fff;
+  
+}
+
+.delete{
+  background-color: #FF5733;
+  color: white;
+}
+
+.color-primary {
+  color: #ea5455;
+  border-bottom: 1rpx solid #ea5455;
+}
+
+.btn {
+  background-color: #ea5455;
+  color: white;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 120px;
+}
+
+.icon1 {
+  width: 40px;
+  height: 40px;
+}
+
+.icon2 {
+  width:30px;
+  height:30px;
+}
+
+.message-center {
+  position: relative;
+  height: 40px;
+  width: 40px;
+}
+
+.unread-number {
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 0;
+  right: -2px;
+  background-color: #ea5455;
+  color: white;
+  font-size: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+.join-badge {
+  border-radius: 20px;
+  background-color: #ea5455;
+  color: white;
+  position: absolute;
+  width: 40px;
+  height: 20px;
+  top: -10px;
+  right: 0;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+
+.container-record{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #ea5455;
+  opacity: 0.8;
+  /* width: 100%; */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /* box-shadow: 0 4px 4px rgba(0,0,0,0.2); */
+  margin: 5px 15px;
+  border-radius: 5px;
+}
+.record-blocks{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width:33%;
+  color: white
+}
+.border-right{
+  border-right: 1px solid rgb(240,240,240)
+
+}
+.record-number{
+  font-style: bold;
+  font-size: 30px
+}
+
+.big{
+  display:flex;
+  justify-content: space-around;
+}
+
+.side{
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.left{
+  padding-left:30px;
+}
+
+.right{
+  padding-left:-40px;
+}
+
+.internal{
+  height: 30px;
+}
+

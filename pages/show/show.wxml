@@ -13,7 +13,7 @@
     <view class='event-intro card-shadow padding-left'>
       <view class='row-title'>
         <view class='font-title font-bold' style="width: 80%;">{{sport.title}}</view>
-        <image src='{{sport.user.avatarUrl}}' class='avatar avatar-small' />
+        <image bindtap='checkUser' data-id='{{sport.user.id}}' src='{{sport.user.avatarUrl}}' class='avatar avatar-small' />
       </view>
       <view class='row-price'>
         <view class='font-title font-bold font-primary'>RMB {{sport.price}}/person</view>
@@ -32,7 +32,7 @@
         </view>
         <scroll-view class='users' scroll-x>
           <block wx:for='{{sport.bookings}}' wx:key="booking.id" wx:for-item="booking">
-            <image src='{{booking.user.avatarUrl}}' class='avatar avatar-small' />
+            <image bindtap='checkUser' data-id='{{booking.user.id}}' src='{{booking.user.avatarUrl}}' class='avatar avatar-small' />
           </block>
         </scroll-view>
       </view>
