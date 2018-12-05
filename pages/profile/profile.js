@@ -279,6 +279,25 @@ wx.navigateTo({
   /**
    * Lifecycle function--Called when page show
    */
+  buttonDelete: function (e) {
+    let page = this;
+    console.log(e)
+    wx.request({
+      url: `${app.globalData.url}/sports/${e.currentTarget.id}`,
+      method: 'DELETE',
+      success() {
+        page.onLoad();
+        // wx.switchTab({
+        //   url: '/pages/profile/profile'
+        // });
+      },
+      fail: function (res) {
+        wx.switchTab({
+          url: '/pages/profile/profile'
+        })
+      },
+    })
+  },
   onShow: function () {
     let page = this;
     wx.getStorage({
@@ -316,9 +335,27 @@ wx.navigateTo({
     });
     this.onLoad();
   },
+  cancelBooking: function (e) {
+    let page = this;
+    console.log(e)
+    wx.request({
+      url: `${app.globalData.url}/sports/${e.currentTarget.id}/bookings/${e.currentTarget.dataset.bookingid}`,
+      method: 'DELETE',
+      success() {
+        page.onLoad();
+        // wx.switchTab({
+        //   url: '/pages/profile/profile'
+        // });
+      },
+      fail: function (res) {
+        wx.switchTab({
+          url: '/pages/profile/profile'
+        })
+      },
+    })
+  },
   
   tabClick: function (e) {
-    console.log("tab clicked")
     this.setData({
       sliderOffset: e.currentTarget.offsetLeft,
       activeIndex: e.currentTarget.id
