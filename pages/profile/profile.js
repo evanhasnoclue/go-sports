@@ -138,17 +138,14 @@ Page({
             if (res.data.gender == "1") {
               res.data.gender = "man"
             }
-            if(res.data.sports !== []){
-              res.data.sports.forEach(sport => likes += sport.like)
-            }
-            if (res.data.fav_sports !== []) {
+             res.data.sports.forEach(sport => likes += sport.like)
             res.data.fav_sports.forEach( (sport) => {
               if (sport[0] !== ""){
               times.push(sport[1])
               categories.push(sport[0])
               }
             })
-            }
+            
             columnChart = new wxCharts({
               canvasId: 'columnCanvas',
               type: 'column',
@@ -310,16 +307,13 @@ wx.navigateTo({
           method: 'GET',
           success: (res) => {
             let messages = [];
-            if (res.data.sports !== []) {
             res.data.sports.forEach((sport) => {
               messages = messages.concat(sport.messages);
             });
-            }
-            if (res.data.messages !== []) {
+            
             res.data.messages.forEach((message) => {
               messages = messages.concat(message.replies);
             });
-            }
             page.setData({
               user: res.data,
               unread: messages.filter(message => message.read_status === false).length
