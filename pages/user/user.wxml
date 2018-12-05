@@ -36,13 +36,13 @@
 </view> 
   <view class="big">
     <view class="side">
-      <view class="explaination left"><image src="../../images/P.png" style="width:10px;height:10px"/>Participation: number of events</view>
-      <view class="explaination left"><image src="../../images/edit.png" style="width:10px;height:10px"/>Replies: number of replies </view>
-      <view class="explaination left"><image src="../../images/L.png" style="width:10px;height:10px"/>Likes: number of likes </view>
+      <view class="explaination left"><image src="../../images/P.png" style="width:10px;height:10px"/>Activness: number of events joined</view>
+      <view class="explaination left"><image src="../../images/edit.png" style="width:10px;height:10px"/>Interaction: interactions with attendees</view>
+      <view class="explaination left"><image src="../../images/L.png" style="width:10px;height:10px"/>Porpularity: amount of likes received</view>
     </view>
     <view class="side">
-      <view class="explaination right"><image src="../../images/F.png" style="width:10px;height:10px"/>Favoraties: number of favoraties</view>
-      <view class="explaination right"><image src="../../images/S.png" style="width:10px;height:10px"/>Sports: number of sports </view>
+      <view class="explaination right"><image src="../../images/F.png" style="width:10px;height:10px"/>Omnisport: variety of sports played</view>
+      <view class="explaination right"><image src="../../images/S.png" style="width:10px;height:10px"/>Leadership: number of events hosted</view>
     </view>
   </view> 
   <view class="internal">
