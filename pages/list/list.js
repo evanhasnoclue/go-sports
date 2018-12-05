@@ -84,7 +84,8 @@ Page({
     success(res){
       console.log(122,res)
       page.setData({sports: res.data.sports.reverse()});
-      wx.stopPullDownRefresh()
+      wx.stopPullDownRefresh();
+      wx.hideNavigationBarLoading();
     }
     })
 
@@ -222,6 +223,7 @@ Page({
    * Page event handler function--Called when user drop down
    */
   onPullDownRefresh: function () {
+    wx.showNavigationBarLoading();
     this.onLoad();
   },
 
