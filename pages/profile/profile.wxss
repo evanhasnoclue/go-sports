@@ -165,6 +165,35 @@ page,
   font-weight: bold;
 }
 
+
+.container-record{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #ea5455;
+  /* width: 100%; */
+  padding-top: 30px;
+  padding-bottom: 30px;
+  /* box-shadow: 0 4px 4px rgba(0,0,0,0.2); */
+  margin: 5px 15px;
+  border-radius: 5px;
+}
+.record-blocks{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width:33%;
+  color: white
+}
+.border-right{
+  border-right: 1px solid rgb(240,240,240)
+
+}
+.record-number{
+  font-style: bold;
+  font-size: 30px
+}
+
 .big{
   display:flex;
   justify-content: space-around;
@@ -183,4 +212,5 @@ page,
 .right{
   padding-left:-40px;
 }
+
 
