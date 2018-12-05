@@ -42,7 +42,9 @@ Page({
               }
             })
           },
-        })
+        });
+        wx.stopPullDownRefresh();
+        wx.hideNavigationBarLoading();
       }
     })
   },
@@ -293,7 +295,9 @@ Page({
    * Page event handler function--Called when user drop down
    */
   onPullDownRefresh: function () {
-
+    const sport_id = this.data.sport.id;
+    wx.showNavigationBarLoading();
+    this.onLoad({id: sport_id});
   },
 
   /**
