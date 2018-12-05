@@ -101,17 +101,16 @@ Page({
             read_status: true
           },
           success: (res) => {
-
+            page.onLoad({ id: page.data.user_id });
+            wx.hideLoading();
+            wx.showToast({
+              title: 'All read!',
+              icon: 'success',
+              duration: 1500
+            });
           }
         })
       }
-    });
-    page.onLoad({id: page.data.user_id});
-    wx.hideLoading();
-    wx.showToast({
-      title: 'All read!',
-      icon: 'success',
-      duration: 1500
     });
   },
 

@@ -131,10 +131,9 @@ Page({
         let sportsIndicator = new Array(res.data.bookings.length*10,res.data.fav_sports.length*10,res.data.replies.length*10,res.data.sports.length*10,result*10)
         that.setData({
           sportsIndicator: sportsIndicator
-        })
-
-            
-
+        });
+        wx.stopPullDownRefresh();
+        wx.hideNavigationBarLoading();
             // wx.hideToast();
           }
         });
@@ -289,7 +288,8 @@ wx.navigateTo({
    * Page event handler function--Called when user drop down
    */
   onPullDownRefresh: function () {
-
+    wx.showNavigationBarLoading();
+    this.onLoad();
   },
 
   /**
