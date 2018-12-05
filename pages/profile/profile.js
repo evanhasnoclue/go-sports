@@ -10,7 +10,7 @@ var columnChart = null;
 
 let chartData = {
   main: {
-    title: '总成交量',
+    title: 'DIVERSIFIED SPORTS',
     data: [5, 2, 4, 3, 4],
     categories: ['swimming', 'dancing', 'badminton', 'walking', 'running']
   }
