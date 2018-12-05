@@ -227,7 +227,7 @@ wx.navigateTo({
     radarChart = new wxCharts({
       canvasId: 'radarCanvas',
       type: 'radar',
-      categories: ['P', 'F', 'R', 'D', 'L'],
+      categories: ['A', 'O', 'I', 'L', 'P'],
       // P:participation,
       // F:favorite
       // R:replies
