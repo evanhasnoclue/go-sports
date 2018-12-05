@@ -171,9 +171,10 @@ page,
   align-items: center;
   justify-content: space-around;
   background-color: #ea5455;
+  opacity: 0.8;
   /* width: 100%; */
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   /* box-shadow: 0 4px 4px rgba(0,0,0,0.2); */
   margin: 5px 15px;
   border-radius: 5px;
