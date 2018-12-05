@@ -2,7 +2,7 @@
 
 <view class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.pexels.com/photos/305239/pexels-photo-305239.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350');background-position:center;" bindtap='newSport'>
   <view class="banner-content">
-    <text class='h1'>Join sports paradise</text>
+    <text class='h1'>Sports GO!</text>
   </view>
 </view>
 <view class="page">
