@@ -98,6 +98,26 @@
           </block>
         </view>
           <view class="weui-tab__content" hidden="{{activeIndex != 2}}"  >
+          <view class='container-record'>
+            <view class = 'record-blocks border-right'>
+              <text class='record-text'>Participated</text>
+              <text class='record-number'>{{profile.sports.length+profile.bookings.length}}</text>
+              <text class='record-text'>Events</text>
+            </view>
+
+            <view class = 'record-blocks border-right'>
+              <text class='record-text'>Received</text>
+              <text class='record-number'>{{likes}}</text>
+              <text class='record-text'>Likes</text>
+            </view>
+
+            <view class = 'record-blocks'>
+              <text class='record-text'>Discoverd</text>
+              <text class='record-number'>{{profile.fav_sports.length}}</text>
+              <text class='record-text'>Sports</text>
+            </view>
+            
+          </view>
           <view class="container2">
     <canvas canvas-id="radarCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
 </view>

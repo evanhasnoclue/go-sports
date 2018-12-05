@@ -46,7 +46,7 @@ Page({
       background: '#0099ff'
     }
     ],
-    tabs: ["Joined", "Hosted", "My data",],
+    tabs: ["Joined", "Hosted", "Dashboard",],
     activeIndex: 1,
     sliderOffset: 0,
     sliderLeft: 0,
@@ -100,6 +100,7 @@ Page({
 
   onLoad: function (options) {
     var that = this;
+    let likes = 0;
     wx.getStorage({
       key: 'current_user',
       success: (res) => {
@@ -115,10 +116,12 @@ Page({
             if (res.data.gender == "1") {
               res.data.gender = "man"
             }
+            res.data.sports.forEach (sport => likes += sport.like)
             // Update local data
             that.setData({
               profile: res.data,
-              unread: app.globalData.unread
+              unread: app.globalData.unread,
+              likes: likes
             });
         // console.log(that.data )
         let result = 0
@@ -135,12 +138,8 @@ Page({
             // wx.hideToast();
           }
         });
-      }
+      }      
     })
-
-
-
-
     wx.getSystemInfo({
       success: function (res) {
         that.setData({
