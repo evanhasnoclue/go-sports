@@ -9,7 +9,8 @@ Page({
   data: {
     liked: false,
     new_message: false,
-    replies_show:false
+    message_content: '',
+    replies_show:[]
   },
 
   /**
@@ -25,7 +26,8 @@ Page({
       success: (res) => {
         console.log('data', res);
         page.setData({
-          sport: res.data
+          sport: res.data,
+          replies_show: new Array(res.data.messages.length).fill(false)
         });
         wx.getStorage({
           key: 'current_user',
@@ -37,10 +39,10 @@ Page({
               console.log(111,booking);
               if (booking.user.id===user.data.id) {
                 page.setData({
-                  booking: booking
+                  booking: booking,
                 })
               }
-            })
+            });
           },
         });
         wx.stopPullDownRefresh();
@@ -195,10 +197,10 @@ Page({
   },
 
   newMessage: function(e) {
-    console.log(e.currentTarget);
     const status = this.data.new_message;
     this.setData({
       new_message: !status,
+      message_content: '',
       message_tag: e.currentTarget.dataset
     })
   },
@@ -257,9 +259,11 @@ Page({
   },
 
   showMore: function(e) {
+    const index = parseInt(e.currentTarget.id);
     const more = this.data.replies_show;
+    more[index] = !more[index];
     this.setData({
-      replies_show: !more
+      replies_show: more
     })
   },
 

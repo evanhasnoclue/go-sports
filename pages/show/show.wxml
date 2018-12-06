@@ -59,11 +59,11 @@
             <view class='message-time font-content font-grey'>{{message.msg_time}}</view>
           </view>
           <view class='message-body font-content font-grey'>{{message.content}}</view>
-          <view class="replies {{replies_show? 'hidden' : 'show'}}">
+          <view class="replies {{replies_show[index]? 'hidden' : 'show'}}">
             <view class='replies-action'>
               <view class='replies-intro'>
               <view wx:if='{{message.replies.length>0}}' class='font-content font-lighter'>{{message.replies.length}} Replies</view>
-              <view wx:if='{{message.replies.length>0}}' class='font-content font-primary' bindtap='showMore'>more</view>
+              <view wx:if='{{message.replies.length>0}}' class='font-content font-primary' bindtap='showMore' id='{{index}}' >more</view>
               <view wx:if='{{message.replies.length==0}}' class='font-content font-lighter'>No replies yet.</view>
               </view>
               <view class='font-content font-primary' bindtap='newMessage' data-tag='reply' data-id='{{message.id}}'>
@@ -71,11 +71,11 @@
               </view>
             </view>
           </view>
-          <view wx:if='{{message.replies.length>0}}' class="replies {{replies_show ? 'show' : 'hidden'}}">
+          <view wx:if='{{message.replies.length>0}}' class="replies {{replies_show[index] ? 'show' : 'hidden'}}">
             <view class='replies-action'>
             <view class='replies-intro'>
               <view class='font-content font-lighter'>All Replies</view>
-              <view class='font-content font-primary' bindtap='showMore'>less</view>
+              <view class='font-content font-primary' bindtap='showMore' id='{{index}}' >less</view>
               </view>
               <view class='font-content font-primary' bindtap='newMessage' data-tag='reply' data-id='{{message.id}}'>
               <image src='../../images/edit.png' class='icon' />
@@ -99,7 +99,7 @@
   <view class="new-message {{new_message ? 'show' : 'hidden'}}">
     <form bindsubmit='submitMessage' class='msg-form'>
       <view class='input'>
-        <textarea placeholder="New message here" name="content" row='2' class='message-content' />
+        <textarea value='{{message_content}}'  placeholder="New message here" name="content" row='2' class='message-content' />
       </view>
       <view class='input-action'>
         <button form-type="submit" class='btn btn-xs margin-kill'> Submit </button>
