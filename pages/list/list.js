@@ -107,7 +107,7 @@ Page({
   },
 
   newSport: function(e) {
-    wx.redirectTo({
+    wx.navigateTo({
       url: '/pages/create/create',
     })
   },
