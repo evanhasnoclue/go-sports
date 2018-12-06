@@ -157,12 +157,15 @@
   background-color: #ea5455;
   color: white;
   position: absolute;
-  width: 40px;
+  width: 60px;
   height: 20px;
   top: -10px;
   right: 0;
   font-size: 15px;
   font-weight: bold;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 
